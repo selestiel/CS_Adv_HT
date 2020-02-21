@@ -15,7 +15,7 @@ namespace Adv_L1_T3
             Console.WriteLine(calc.Substraction(250, 500));
             Console.WriteLine(calc.Multiplication(250, 500));
             Console.WriteLine(calc.Dividing(250, 500));
-            Console.WriteLine("------------");
+            Console.WriteLine(new string('-',10));
             Calculator<string, int> calcs = new Calculator<string, int>();
             Console.WriteLine(calcs.Addition("250", 500));
             Console.WriteLine(calcs.Substraction("250", 500));
