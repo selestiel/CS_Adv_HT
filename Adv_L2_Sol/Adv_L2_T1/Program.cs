@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,6 @@ namespace Adv_L2_T1
     {
         static void Main(string[] args)
         {
-            IEnumerable<T> enumerable = new MyList<T>();
-            IEnumerator<T> enumerator = enumerable.GetEnumerator();
             MyList<int> ML = new MyList<int>();
             int i = 0;
             while (i<20)
@@ -36,7 +35,6 @@ namespace Adv_L2_T1
             Console.WriteLine();
             
 
-
             Console.WriteLine();
             Console.ReadKey();
         }
@@ -50,27 +48,66 @@ namespace Adv_L2_T1
         bool Contains(T item);
 
     }
-    class MyList<T> : IMyList<T>
+    class MyList<T> : IMyList<T>, IEnumerable<T>, IEnumerator
     {
         private T[] array;
 
         public int count { get; }
-        
+
+        public object Current => array.Last();
+
         public T this[int index] 
         { 
             get
             {
-                return value;
+                return array[index];
+            }
+            set 
+            {
+                array[index] = value;
             }
         }
         public void Add(T arg)
         {
+            array.Append(arg);
+
+
         }
         public void Clear()
-        {  
+        {
+            Array.Empty<T>();
         }
         public bool Contains(T item)
         {
+            return item is T;
+        }
+
+        public IEnumerator<T> Enumerator
+        {
+            get
+            {
+                return Enumerator;
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return Enumerator;
+        }
+
+        public bool MoveNext()
+        {
+            return true;
+        }
+
+        public void Reset()
+        {
+            array.FirstOrDefault();
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Enumerator;
         }
     }
     }
