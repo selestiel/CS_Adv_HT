@@ -1,9 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Adv_L2_T1
 {
@@ -11,29 +9,16 @@ namespace Adv_L2_T1
     {
         static void Main(string[] args)
         {
-            MyList<int> ML = new MyList<int>();
-            int i = 0;
-            while (i<20)
+            MyList<int> ML = new MyList<int>(20,0);
+            for (int i = 0; i < 20; i++)
             {
-                ML.Add(i++);
+                ML[i] = i;
+
             }
-            foreach (var item in ML)
-	        {
-                Console.Write("\t" + item);
-	        }
-            Console.WriteLine();
-            MyList<string> MLS = new MyList<string>();
-            int j =0;
-            while(j<20)
+            for (int i = 0; i < 20; i++)
             {
-                MLS.Add("strN" + j);
+                Console.Write(" " + ML[i]);
             }
-            foreach (var item in MLS)
-	        {
-                Console.Write("\t" + item);
-	        }
-            Console.WriteLine();
-            
 
             Console.WriteLine();
             Console.ReadKey();
@@ -48,21 +33,19 @@ namespace Adv_L2_T1
         bool Contains(T item);
 
     }
-    class MyList<T> : IMyList<T>, IEnumerable<T>, IEnumerator
+    class MyList<T> : IMyList<T>
     {
         private T[] array;
 
         public int count { get; }
 
-        public object Current => array.Last();
-
-        public T this[int index] 
-        { 
+        public T this[int index]
+        {
             get
             {
                 return array[index];
             }
-            set 
+            set
             {
                 array[index] = value;
             }
@@ -70,8 +53,6 @@ namespace Adv_L2_T1
         public void Add(T arg)
         {
             array.Append(arg);
-
-
         }
         public void Clear()
         {
@@ -79,35 +60,43 @@ namespace Adv_L2_T1
         }
         public bool Contains(T item)
         {
-            return item is T;
+            dynamic itemx = 0;
+
+            foreach (dynamic itemc in array)
+            {
+                if (itemc.Equals(item))
+                {
+                    itemx = itemc;
+                }
+                else
+                {
+                    itemx = 0;
+                }
+            }
+            if (!itemx.Equals(item))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
         }
 
-        public IEnumerator<T> Enumerator
+        public IEnumerator GetEnumerator()
         {
-            get
+            return this as IEnumerator;
+        }
+
+        public MyList(int len, T nm)
+        {
+            array = new T[len];
+            for (int i = 0; i < array.Length; i++)
             {
-                return Enumerator;
+                array[i] = nm;
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return Enumerator;
-        }
-
-        public bool MoveNext()
-        {
-            return true;
-        }
-
-        public void Reset()
-        {
-            array.FirstOrDefault();
-        }
-
-        public IEnumerator<T> GetEnumerator()
-        {
-            return Enumerator;
-        }
     }
-    }
+}
