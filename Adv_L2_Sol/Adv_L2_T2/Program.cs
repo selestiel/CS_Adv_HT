@@ -21,8 +21,6 @@ namespace Adv_L2_T2
             {
                 Console.Write(" " + ML[i]);
             }
-            Console.WriteLine(new string('_',10));
-
             int[] LP = MyClass.GetArray(ML);
             for (int i = 0; i < ML.count; i++)
             {
@@ -39,7 +37,6 @@ namespace Adv_L2_T2
         int count { get; }
         void Clear();
         bool Contains(T item);
-
     }
      public class MyList<T> : IMyList<T>
     {
@@ -115,7 +112,7 @@ namespace Adv_L2_T2
     {
         public static T[] GetArray<T>(this MyList<T> myList)
         {
-            var MLL = new T[myList.count];
+            dynamic MLL = new T[myList.count];
             for (int i = 0; i < myList.count; i++)
             {
                 MLL[i] = myList[i];

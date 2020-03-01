@@ -15,6 +15,12 @@ namespace Adv_L3_T1
                 Console.WriteLine(((arg1 + arg2 + arg3) / 3));
             };
             anonim.Invoke(25, 35, 45);
+            mydelegate md1 = delegate (int arg1, int arg2, int arg3)
+            {
+                return ((arg1 + arg2 + arg3) / 3);
+            };
+            
+            Console.WriteLine(md1(25,65,5));
             Console.WriteLine();
             
             Console.WriteLine();
