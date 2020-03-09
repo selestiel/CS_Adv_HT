@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D4F66797-2DB4-4573-8B84-1B77C7D17578}</ProjectGuid>
+    <ProjectGuid>{BE7527E0-627D-4F43-B4EC-1B8B128920C8}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Adv_L5_T4</RootNamespace>
-    <AssemblyName>Adv_L5_T4</AssemblyName>
+    <RootNamespace>Adv_L5_T5</RootNamespace>
+    <AssemblyName>Adv_L5_T5</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -53,10 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarColor.cs" />
-    <Compile Include="CarDBContext.cs" />
-    <Compile Include="CarModel.cs" />
-    <Compile Include="CarType.cs" />
+    <Compile Include="MyClass1.cs" />
+    <Compile Include="MyClass2.cs" />
+    <Compile Include="MyDBContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
