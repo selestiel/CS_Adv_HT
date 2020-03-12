@@ -30,10 +30,18 @@ namespace Adv_L5_T6
                 db.SaveChanges();
                 var bike1 = db.Bikes.ToList();
                 BikeType T5 = new BikeType { TypeName = "US" };
-                //Console.WriteLine(db.Bikes.Include(T5.TypeName));
+                Console.WriteLine(new string('-', 30));
+                Console.WriteLine(value: db.Bikes.Include(dbs=>dbs.bikeType));
+                Console.WriteLine(new string('-',20));;
                 var bikeSSS = bike1.Select(sel => sel.bikeName);
+
                 Console.WriteLine(bikeSSS);
-                Console.WriteLine(value: db.Bikes.Find("BikeName"));
+
+                Console.WriteLine(new string('-', 30));
+                Console.WriteLine(db.Bikes.Find(1));
+
+                Console.WriteLine(new string('-', 30));
+                Console.WriteLine(new string('*', 30));
 
                 db.SaveChanges();
 

@@ -50,9 +50,8 @@ namespace Adv_L5_T5
                 }
                 Console.WriteLine(clas.Count());
 
-                Console.WriteLine(MCIE.Max());
-                //double cavg = clas.Average<MyClass2>(Func<MyClass2,double>Count);
-                //Console.WriteLine(clas.Average());
+                Console.WriteLine(MCIE.Max(mm=>mm.Count));
+                Console.WriteLine(clas.Average(dc=>dc.Count));
 
                 Console.WriteLine(new string('*', 50));
 
@@ -102,9 +101,11 @@ namespace Adv_L5_T5
                 }
                 Console.WriteLine(clas2.Count());
                 IEnumerable<MyClass1> MCTIE = new List<MyClass1> { MC1, MC2 };
-                Console.WriteLine(MCTIE.Min());
-                Console.WriteLine(MCTIE.Max());
-                //Console.WriteLine(clas2.Average());
+                Console.WriteLine(MCTIE.Min(mn=>mn.Count));
+                Console.WriteLine(MCTIE.Max(mm=>mm.Count));
+                Console.WriteLine(clas2.Average(rrr=> rrr.Count));
+
+                Console.WriteLine(clas2.Average(rrr => rrr.ID));
                 Console.WriteLine(new string('*', 50));
 
                 Console.ReadKey();
