@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 using _ITemp;
 namespace Adv_L6_T1
 {
+    // This is Implementation of Lesson 6 Reflection: Task 1 and Task 2: 
+    // This implementation takes projects Adv_L6_T1, Adv_l6_TA, Adv_L6_TM.
     public class Temp : ITemp
     {
         public string TempName { get; set; }
         public double TempValue { get; set; }
-        public void TempInfo()
+        public Temp()
+        {
+            GetTemp(TempName);
+            SetTemp(TempName, TempValue);
+        }
+        public virtual void TempInfo()
         {
             Console.WriteLine(@"Temp: {0} Value {1}",TempName,TempValue);
         }
@@ -69,7 +76,7 @@ namespace Adv_L6_T1
                 Console.WriteLine("Not implemented");
             }
         }
-        public void GetTemp(string name)
+        public virtual void GetTemp(string name)
         {
             if(name == Celsius.name)
             {

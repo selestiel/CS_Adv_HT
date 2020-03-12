@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using Adv_L6_TM;
 namespace Adv_L6_TA
 {
+    using TM = Adv_L6_TM;
     class Program
     {
         static void Main(string[] args)
@@ -26,6 +28,27 @@ namespace Adv_L6_TA
 
             // Получения информации о  о параметрах для метода.
             GetMethodsParams(assembly);
+
+            //Задержка
+            Console.ReadKey();
+
+
+            Assembly assembly2 = null;
+            try
+            {
+                assembly2 = Assembly.Load("Adv_L6_TM");
+                Console.WriteLine("Assembly Adv_L6_TM sucsessfully loaded");
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            TM.Program TP = new TM.Program();
+            TP.GetType().GetMethod("Main",0);
+            TM.Program.Main(null);
+            
+
 
             //Задержка
             Console.ReadKey();
@@ -96,5 +119,6 @@ namespace Adv_L6_TA
             }
         }
         #endregion
+
     }
 }
