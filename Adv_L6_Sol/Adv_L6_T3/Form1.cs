@@ -127,7 +127,7 @@ namespace Adv_L6_T3
             }
 
         }
-    
+        #region Methods
         private void BTN_CVT_Click(object sender, EventArgs e)
         {
 
@@ -198,5 +198,6 @@ namespace Adv_L6_T3
         {
             TEXTOUTPUT.Text = "";
         }
+        #endregion
     }
 }
