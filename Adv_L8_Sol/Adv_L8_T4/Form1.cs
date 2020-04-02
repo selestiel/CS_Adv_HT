@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using System.Xml;
+using System.Xml.Linq;
+
 using Microsoft.Win32;
-using System.Configuration;
+
 namespace Adv_L8_T4
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +25,7 @@ namespace Adv_L8_T4
             this.richTextBox1.BackColor = Properties.Settings.Default.BoxColor;
             this.richTextBox1.ForeColor = Properties.Settings.Default.TextColor;
             this.BackColor = Properties.Settings.Default.BackColor;
-            this.richTextBox1.Font = new Font(Properties.Settings.Default.Font.Name,Convert.ToSingle(Properties.Settings.Default.Font.Size));
+            this.richTextBox1.Font = new Font(Properties.Settings.Default.Font.Name, Convert.ToSingle(Properties.Settings.Default.Font.Size));
         }
         private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -68,7 +64,7 @@ namespace Adv_L8_T4
         {
             SetXmlSettings();
         }
-        
+
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GetXmlSettings();
@@ -97,58 +93,69 @@ namespace Adv_L8_T4
         {
             GetRegSettings();
             Update();
-            
+
         }
         private void SetXmlSettings()
         {
             XDocument doc = new XDocument(new XElement("Application"));
-            doc.Root.Add(new XElement("CongigurationSettings"));
-            doc.Root.LastNode.AddAfterSelf(new XElement("BackColor",
+            doc.Root.Add(new XElement("CongigurationSettings", new XElement("BackColor", new XElement("Params",
                 new XAttribute("BackColorA", Properties.Settings.Default.BackColor.A),
                 new XAttribute("BackColorR", Properties.Settings.Default.BackColor.R),
                 new XAttribute("BackColorG", Properties.Settings.Default.BackColor.G),
-                new XAttribute("BackColorB", Properties.Settings.Default.BackColor.B)));
-            doc.Root.LastNode.AddAfterSelf(new XElement("BoxColor",
+                new XAttribute("BackColorB", Properties.Settings.Default.BackColor.B))),
+            new XElement("BoxColor", new XElement("Params",
                 new XAttribute("BoxColorA", Properties.Settings.Default.BoxColor.A),
                 new XAttribute("BoxColorR", Properties.Settings.Default.BoxColor.R),
                 new XAttribute("BoxColorG", Properties.Settings.Default.BoxColor.G),
-                new XAttribute("BoxColorB", Properties.Settings.Default.BoxColor.B)));
-            doc.Root.LastNode.AddAfterSelf(new XElement("TextColor",
+                new XAttribute("BoxColorB", Properties.Settings.Default.BoxColor.B))),
+            new XElement("TextColor", new XElement("Params",
                 new XAttribute("TextColorA", Properties.Settings.Default.TextColor.A),
                 new XAttribute("TextColorR", Properties.Settings.Default.TextColor.R),
                 new XAttribute("TextColorG", Properties.Settings.Default.TextColor.G),
-                new XAttribute("TextColorB", Properties.Settings.Default.TextColor.B)));
-            doc.Root.LastNode.AddAfterSelf(new XElement("TextFont",
+                new XAttribute("TextColorB", Properties.Settings.Default.TextColor.B))),
+            new XElement("TextFont", new XElement("Params",
                 new XAttribute("FontName", Properties.Settings.Default.Font.Name),
-                new XAttribute("FontSize", Properties.Settings.Default.Font.Size)));
+                new XAttribute("FontSize", Properties.Settings.Default.Font.Size)))));
             doc.Save("AppConfig.xml");
             Properties.Settings.Default.Save();
 
         }
         private void GetXmlSettings()
         {
-            XmlTextReader reader = new XmlTextReader("D:/CPPDEV/VSComC#A/CS_Adv_HT/Adv_L8_Sol/Adv_L8_T4/bin/Debug/AppConfig.xml");
-            reader.Read();
-            Properties.Settings.Default.BackColor = Color.FromArgb(
-                Convert.ToInt32(reader.GetAttribute("BackColorA")),
-                Convert.ToInt32(reader.GetAttribute("BackColorR")),
-                Convert.ToInt32(reader.GetAttribute("BackColorG")),
-                Convert.ToInt32(reader.GetAttribute("BackColorB")));
-            Properties.Settings.Default.BoxColor = Color.FromArgb(
-                Convert.ToInt32(reader.GetAttribute("BoxColorA")),
-                Convert.ToInt32(reader.GetAttribute("BoxColorR")),
-                Convert.ToInt32(reader.GetAttribute("BoxColorG")),
-                Convert.ToInt32(reader.GetAttribute("BoxColorB")));
-            Properties.Settings.Default.TextColor = Color.FromArgb(
-                Convert.ToInt32(reader.GetAttribute("TextColorA")),
-                Convert.ToInt32(reader.GetAttribute("TextColorR")),
-                Convert.ToInt32(reader.GetAttribute("TextColorG")),
-                Convert.ToInt32(reader.GetAttribute("TextColorB")));
-            Properties.Settings.Default.Font = new Font(reader.GetAttribute("FontName"),
-                float.Parse(reader.GetAttribute("FontSize")));
+            XmlReader reader = XmlReader.Create("D:/CPPDEV/VSComC#A/CS_Adv_HT/Adv_L8_Sol/Adv_L8_T4/bin/Debug/AppConfig.xml");
+            while (reader.Read())
+            {
+                switch (reader.NodeType)
+                {
+                    case XmlNodeType.Attribute:
+                        Properties.Settings.Default.BackColor = Color.FromArgb(
+                            Convert.ToInt32(reader.GetAttribute("BackColorA")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorR")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorG")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorB")));
+                        Properties.Settings.Default.BackColor = Color.FromArgb(
+                            Convert.ToInt32(reader.GetAttribute("BackColorA")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorR")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorG")),
+                            Convert.ToInt32(reader.GetAttribute("BackColorB")));
+                        Properties.Settings.Default.BoxColor = Color.FromArgb(
+                            Convert.ToInt32(reader.GetAttribute("BoxColorA")),
+                            Convert.ToInt32(reader.GetAttribute("BoxColorR")),
+                            Convert.ToInt32(reader.GetAttribute("BoxColorG")),
+                            Convert.ToInt32(reader.GetAttribute("BoxColorB")));
+                        Properties.Settings.Default.TextColor = Color.FromArgb(
+                            Convert.ToInt32(reader.GetAttribute("TextColorA")),
+                            Convert.ToInt32(reader.GetAttribute("TextColorR")),
+                            Convert.ToInt32(reader.GetAttribute("TextColorG")),
+                            Convert.ToInt32(reader.GetAttribute("TextColorB")));
+                        Properties.Settings.Default.Font = new Font(reader.GetAttribute("FontName"),
+                            float.Parse(reader.GetAttribute("FontSize")));
+                        break;
+                }
+            }
             reader.Close();
             Properties.Settings.Default.Reload();
-            
+
         }
         private void SetRegSettings()
         {
