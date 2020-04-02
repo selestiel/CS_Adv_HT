@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Adv_L8_T4.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="BackColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">128, 255, 255</Value>
+    </Setting>
+    <Setting Name="BoxColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">0, 192, 192</Value>
+    </Setting>
+    <Setting Name="TextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Teal</Value>
+    </Setting>
+    <Setting Name="Font" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 8.25pt</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

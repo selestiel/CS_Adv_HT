@@ -3,21 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyNamespace;
 
-
-//Namespaces task 1
-using MN = MyNamespace;
-namespace Adv_L9_T3
+namespace Adv_L9_T2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            MN.MyClass myClass = new MyClass("Joined", 5);
-            myClass.info();
-            Console.ReadKey();
         }
     }
 }
-

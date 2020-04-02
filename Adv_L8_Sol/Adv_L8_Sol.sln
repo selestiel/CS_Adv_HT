@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adv_L8_T2", "Adv_L8_T2\Adv_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adv_L8_T4", "Adv_L8_T4\Adv_L8_T4.csproj", "{DB1F88B7-12B9-43C3-BA3C-FE93154515E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adv_L8_T3", "Adv_L8_T3\Adv_L8_T3.csproj", "{E0E6D106-DF07-498C-927A-746B886C20CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB1F88B7-12B9-43C3-BA3C-FE93154515E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB1F88B7-12B9-43C3-BA3C-FE93154515E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB1F88B7-12B9-43C3-BA3C-FE93154515E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0E6D106-DF07-498C-927A-746B886C20CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0E6D106-DF07-498C-927A-746B886C20CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0E6D106-DF07-498C-927A-746B886C20CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0E6D106-DF07-498C-927A-746B886C20CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
