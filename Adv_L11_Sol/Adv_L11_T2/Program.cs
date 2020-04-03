@@ -40,9 +40,8 @@ namespace Adv_L11_T2
         // methods
         static void Main()
         {
-            
-            ThreadStart thread = new ThreadStart(this.UpdateAllColumns);
-            Thread thread1 = new Thread(UpdateAllColumns);
+            ThreadStart thread = new ThreadStart(Run);
+            Thread thread1 = new Thread(Run);
             thread1.Start();
             Console.WriteLine("ThreadStarted");
             
@@ -66,11 +65,39 @@ namespace Adv_L11_T2
 
             // do the Matrix effect
             // every loop all y's get incremented by 1
+            
             while (true)
+            {
                 UpdateAllColumns(width, height, y);
+            }        
         }
 
+        private static void Run()
+        {
+            int width, height;
+            // setup array of starting y values
+            int[] y;
 
+            // width was 209, height was 81
+            // setup the screen and initial conditions of y
+            Initialize(out width, out height, out y);
+
+            // do the Matrix effect
+            // every loop all y's get incremented by 1
+
+            while (true)
+            {
+                List<Thread> threads = new List<Thread>();
+                Thread thread = new Thread(() => UpdateAllColumns(width, height, y));
+                thread.Start();
+                threads.Add(thread);
+                foreach (Thread t in threads)
+                {
+                    t.Join();
+                }
+                
+            }
+        }
         private static void UpdateAllColumns(int width, int height, int[] y)
         {
             int x;
@@ -120,7 +147,7 @@ namespace Adv_L11_T2
                 if (Console.ReadKey().Key == ConsoleKey.F5)
                     Initialize(out width, out height, out y);
                 if (Console.ReadKey().Key == ConsoleKey.F11)
-                    System.Threading.Thread.Sleep(1);
+                    System.Threading.Thread.Sleep(10);
             }
 
         }
