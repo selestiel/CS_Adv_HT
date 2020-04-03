@@ -1,0 +1,18 @@
+"Warlords Adventurer Shop"
+Receipt to paycheck:
+ID	Name				Price				Value				Purchase Date
+1.	Bronze Armor Set		250.00				UAH			20.02.2019
+2.	Silver Spear			15.00				UAH			02.03.2018
+3.	Small Health Potion		75.00				UAH			05.04.2017
+4.	Standart Bandages		50				UAH			08.08.2016
+5.	Warlord Shield			50.00				UAH			12.09.2019
+6.	Blue Moon Sword			75.00				UAH			13.10.2019
+7.	Ancient Earrings		250.00				UAH			20.11.2019
+8.	Dragon Jewel Ring		750.00				UAH			11.12.2019
+9.	Mythril Armor Set		500.00				UAH			14.02.2020
+10.	Sage Amulet			500.00				UAH			11.11.2018
+11.	Bread				623				UAH			23.06.2016
+12.	Medium Mana Potion		369.00				UAH			15.07.2017
+13.	Mythic Muramasa			75.00				UAH			01.08.2019
+14.	Inferno				200.00				UAH			06.06.2018
+15.	Armageddon			50.00				UAH			12.02.2020					

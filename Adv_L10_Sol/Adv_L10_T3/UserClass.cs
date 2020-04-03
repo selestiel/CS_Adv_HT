@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Xml;
 namespace UserClassNS
 {
-    [Serializable]
     public class UserClass
     {
         
