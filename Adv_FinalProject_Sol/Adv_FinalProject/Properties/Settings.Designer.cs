@@ -70,5 +70,17 @@ namespace Adv_FinalProject.Properties {
                 this["MFColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"User\"")]
+        public string LoggedInName {
+            get {
+                return ((string)(this["LoggedInName"]));
+            }
+            set {
+                this["LoggedInName"] = value;
+            }
+        }
     }
 }

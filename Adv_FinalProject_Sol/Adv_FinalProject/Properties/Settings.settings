@@ -14,5 +14,8 @@
     <Setting Name="MFColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Blue</Value>
     </Setting>
+    <Setting Name="LoggedInName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">"User"</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

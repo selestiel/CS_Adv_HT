@@ -1,49 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Adv_FinalProject
 {
-    public class Admins
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Admins
     {
-        [System.ComponentModel.DataAnnotations.Key]
+
+        [Key]
         public int Admin_ID { get; set; }
+
         public string Admin_First_Name { get; set; }
+
         public string Admin_Last_Name { get; set; }
+
         public string Admin_Email { get; set; }
+
         public string Admin_Phone_Number { get; set; }
+
         public double Admin_Money { get; set; }
+
         public DateTime Admin_Birth_Date { get; set; }
+
         public DateTime Admin_Registration_Date { get; set; }
-        public LoginPass Admin_Login_Password { get; set; } 
-        public virtual ICollection<Orders> Orders { get; set; }
-        public virtual ICollection<Products> Products { get; set; }
-        public void CreateAdmin(string fname, string lname, string email, string phone, DateTime BD)
+        public Login Admin_Login { get; set; }
+        public Password Admin_Password { get; set; }
+        public virtual ICollection<Orders> Orders { get; }
+        public virtual ICollection<Products> Products { get; }
+        public virtual ICollection<Clients> Clients { get; }
+        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email)
         {
             Admin_ID++;
-            Admin_First_Name = fname;
-            Admin_Last_Name = lname;
-            Admin_Email = email;
+            Admin_First_Name = Fname;
+            Admin_Last_Name = Lname;
+            Admin_Birth_Date = Convert.ToDateTime(Bdate);
             Admin_Phone_Number = phone;
-            Admin_Birth_Date = BD;
+            Admin_Email = email;
             Admin_Registration_Date = DateTime.UtcNow;
         }
-        public void Admins_Set_LoginPass(LoginPass lp)
+        public string GetAdmin(Login login)
         {
-            Admin_Login_Password = lp;
+            if (login.Admins_ID == Admin_ID)
+            {
+                return Admin_First_Name;
+            }
+            else
+            {
+                return "Error";
+            }
         }
-        public void Admin_Add_Money(double money)
+        public Admins()
         {
-            Admin_Money += money;
-        }
-        public Admins(string fname, string lname, string email, string phone, DateTime BD)
-        {
-            CreateAdmin(fname, lname, email, phone, BD);
             Orders = new List<Orders>();
             Products = new List<Products>();
+            Clients = new List<Clients>();
         }
-       
     }
 }

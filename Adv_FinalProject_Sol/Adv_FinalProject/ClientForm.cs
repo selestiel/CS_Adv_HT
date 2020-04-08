@@ -15,6 +15,18 @@ namespace Adv_FinalProject
         public ClientForm()
         {
             InitializeComponent();
+            Username_lbl.Text = Properties.Settings.Default.LoggedInName;
+        }
+
+        private void AddMoney_Btn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddOrder_Btn_Click(object sender, EventArgs e)
+        {
+            CreateOrder order = new CreateOrder();
+            order.Show();
         }
     }
 }

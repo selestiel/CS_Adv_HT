@@ -25,7 +25,7 @@ namespace Adv_FinalProject
             string CLname = ClientLName_tbox.Text;
             string Cphone = ClientPhone_tbox.Text;
             string Cemail = ClientEmail_tbox.Text;
-            DateTime CBDate = Convert.ToDateTime(ClientBDate_tbox.Text);
+            string CBDate = ClientBDate_tbox.Text;
             string UcClogin = ClientLogin_tbox.Text;
             string UcCPass = ClientPassword_tbox.Text;
             string Clogin = "";
@@ -49,8 +49,12 @@ namespace Adv_FinalProject
                 MessageBox.Show("Error wrong login input");
             }
 
-            Clients NewClient = new Clients(CFname, CLname, Cemail, Cphone, CBDate);
-            NewClient.SetClientPassword(new LoginPass(Clogin,Cpass,NewClient,null));
+            Clients NewClient = new Clients();
+            NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail);
+            Login login = new Login();
+            Password password = new Password();
+            login.SetLogin(Clogin, NewClient);
+            password.SetPassword(Cpass, NewClient);
         }
         private bool ValidatePassword(string password, out string ErrorMessage)
         {
@@ -63,19 +67,12 @@ namespace Adv_FinalProject
             }
 
             var hasNumber = new Regex(@"[0-9]+");
-            var hasUpperChar = new Regex(@"[A-Z]+");
             var hasMiniMaxChars = new Regex(@".{8,15}");
             var hasLowerChar = new Regex(@"[a-z]+");
-            var hasSymbols = new Regex(@"[!@#$%^&*()_+=\[{\]};:<>|./?,-]");
 
             if (!hasLowerChar.IsMatch(input))
             {
                 ErrorMessage = "Password should contain at least one lower case letter.";
-                return false;
-            }
-            else if (!hasUpperChar.IsMatch(input))
-            {
-                ErrorMessage = "Password should contain at least one upper case letter.";
                 return false;
             }
             else if (!hasMiniMaxChars.IsMatch(input))
@@ -86,12 +83,6 @@ namespace Adv_FinalProject
             else if (!hasNumber.IsMatch(input))
             {
                 ErrorMessage = "Password should contain at least one numeric value.";
-                return false;
-            }
-
-            else if (!hasSymbols.IsMatch(input))
-            {
-                ErrorMessage = "Password should contain at least one special case character.";
                 return false;
             }
             else

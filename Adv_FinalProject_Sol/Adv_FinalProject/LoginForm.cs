@@ -24,32 +24,44 @@ namespace Adv_FinalProject
             string Pass = Password_textbox.Text;
 
 
-            using (var lpdb = new MyDbContextModel())
+            using (var lpdb = new MyModel())
             {
-               var Pquery = from passwords in lpdb.LoginPasses
-                             select passwords;
-                foreach (var item in Pquery)
+                foreach (Login logc in lpdb.Logins)
                 {
-                    if (Login.Equals(item.Login) && Pass.Equals(item.Password))
+                    if (logc.Login_Name.Equals(Login))
                     {
-                        if (item.Admin_ID != 0) 
-                        { 
-                            Hide();
-                            AdminForm Aform = new AdminForm();
-                            Aform.Show();
-                        }
-                        else if (item.Client_ID != 0)
+                        foreach (Password pasc in lpdb.Passwords)
                         {
-                            Hide();
-                            ClientForm Cform = new ClientForm();
-                            Cform.Show();
+                            if (pasc.Password_Name.Equals(Pass) & logc.Admins_ID == pasc.Admins_ID)
+                            {
+                                if (logc.Admins_ID != 0)
+                                {
+                                    Hide();
+                                    AdminForm Aform = new AdminForm();
+                                    Aform.Show();
+                                    Admins admins = new Admins();
+                                    Properties.Settings.Default.LoggedInName = admins.GetAdmin(logc);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error wrong Login or Password!");
+                                    MfRet();
+                                }
+                            }
+                            else if (pasc.Password_Name.Equals(Pass) & logc.Clients_ID == pasc.Clients_ID)
+                            {
+                                Hide();
+                                ClientForm Cform = new ClientForm();
+                                Cform.Show();
+                                Clients clients = new Clients();
+                                Properties.Settings.Default.LoggedInName = clients.GetClient(logc);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error wrong Login or Password!");
+                                MfRet();
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Error wrong Login or Password!");
-                            MfRet();
-                        }
-                     
                     }
                     else
                     {
@@ -58,6 +70,12 @@ namespace Adv_FinalProject
                     }
                 }
             }
+        }
+        private void Override_Btn_Click(object sender, EventArgs e)
+        {
+            Hide();
+            AdminForm admin = new AdminForm();
+            admin.Show();
         }
     }
 }

@@ -34,6 +34,7 @@
             this.Password_textbox = new System.Windows.Forms.TextBox();
             this.Account_Info_lbl = new System.Windows.Forms.Label();
             this.Login_Btn = new System.Windows.Forms.Button();
+            this.Override_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login_lbl
@@ -94,11 +95,22 @@
             this.Login_Btn.UseVisualStyleBackColor = true;
             this.Login_Btn.Click += new System.EventHandler(this.Login_Btn_Click);
             // 
+            // Override_Btn
+            // 
+            this.Override_Btn.Location = new System.Drawing.Point(64, 415);
+            this.Override_Btn.Name = "Override_Btn";
+            this.Override_Btn.Size = new System.Drawing.Size(195, 23);
+            this.Override_Btn.TabIndex = 4;
+            this.Override_Btn.Text = "Override";
+            this.Override_Btn.UseVisualStyleBackColor = true;
+            this.Override_Btn.Click += new System.EventHandler(this.Override_Btn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Override_Btn);
             this.Controls.Add(this.Login_Btn);
             this.Controls.Add(this.Account_Info_lbl);
             this.Controls.Add(this.Password_textbox);
@@ -120,5 +132,6 @@
         private System.Windows.Forms.TextBox Password_textbox;
         private System.Windows.Forms.Label Account_Info_lbl;
         private System.Windows.Forms.Button Login_Btn;
+        private System.Windows.Forms.Button Override_Btn;
     }
 }

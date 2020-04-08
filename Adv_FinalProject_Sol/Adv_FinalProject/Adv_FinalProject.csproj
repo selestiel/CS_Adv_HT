@@ -72,6 +72,12 @@
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Clients.cs" />
+    <Compile Include="CreateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateOrder.Designer.cs">
+      <DependentUpon>CreateOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,21 +90,23 @@
     <Compile Include="CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="C__MigrationHistory.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginPass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyDbContextModel.cs" />
+    <Compile Include="MyModel.cs" />
     <Compile Include="Orders.cs" />
+    <Compile Include="Password.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateClientForm.resx">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateOrder.resx">
+      <DependentUpon>CreateOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

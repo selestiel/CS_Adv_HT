@@ -1,41 +1,57 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Adv_FinalProject
 {
-    public class Orders
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
+    public partial class Orders
     {
-        [System.ComponentModel.DataAnnotations.Key]
+
+        [Key]
         public int Order_ID { get; set; }
+
         public string Order_Name { get; set; }
+
         public double Order_Price { get; set; }
+
         public DateTime Order_Date { get; set; }
-        public Clients Clients { get; set; }
-        public Admins Admins { get; set; }
-        public virtual ICollection<Products> Products { get; set; }
-        public void Create_Order(string name, Clients client, Admins admin, List<Products> products)
+
+        public int? Admin_ID { get; set; }
+
+        public int? Client_ID { get; set; }
+
+        public virtual ICollection<Admins> Admins { get; }
+
+        public virtual ICollection<Clients> Clients { get; }
+
+        public virtual ICollection<Products> Products { get; }
+        public void CreateOrder(string name, Admins admins,List<Products> products)
         {
             Order_ID++;
             Order_Name = name;
-            double sum = 0;
-            foreach (var item in products)
+            Admin_ID = admins.Admin_ID;
+            foreach  (Products item in products)
             {
-                sum += item.Product_Price * item.Product_Buy;
-                item.Product_Amount -= item.Product_Buy;
+                Order_Price += item.Product_Price * item.Product_Amount;
             }
-            Order_Price = sum;
-            Order_Date = DateTime.UtcNow;
-            Clients = client;
-            Admins = admin;
-            Products = products;
+        }
+        public void CreateOrder(string name, Clients clients, List<Products> products)
+        {
+            Order_ID++;
+            Order_Name = name;
+            Client_ID = clients.Client_ID;
+            foreach (Products item in products)
+            {
+                Order_Price += item.Product_Price * item.Product_Amount;
+            }
         }
         public Orders()
         {
-            this.Products = new List<Products>();
+            Admins = new List<Admins>();
+            Clients = new List<Clients>();
+            Products = new List<Products>();
         }
-
     }
 }
