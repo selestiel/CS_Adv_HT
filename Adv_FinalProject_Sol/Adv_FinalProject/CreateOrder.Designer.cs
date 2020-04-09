@@ -38,6 +38,7 @@
             this.OrderName_tbox = new System.Windows.Forms.TextBox();
             this.CreateOrder_Btn = new System.Windows.Forms.Button();
             this.CheckOutOrder_Btn = new System.Windows.Forms.Button();
+            this.Username_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +72,7 @@
             // 
             // AddProduct_Btn
             // 
+            this.AddProduct_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddProduct_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddProduct_Btn.Location = new System.Drawing.Point(543, 34);
             this.AddProduct_Btn.Name = "AddProduct_Btn";
@@ -111,6 +113,7 @@
             // 
             // CreateOrder_Btn
             // 
+            this.CreateOrder_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CreateOrder_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CreateOrder_Btn.Location = new System.Drawing.Point(543, 109);
             this.CreateOrder_Btn.Name = "CreateOrder_Btn";
@@ -122,6 +125,8 @@
             // 
             // CheckOutOrder_Btn
             // 
+            this.CheckOutOrder_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckOutOrder_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CheckOutOrder_Btn.Location = new System.Drawing.Point(12, 158);
             this.CheckOutOrder_Btn.Name = "CheckOutOrder_Btn";
@@ -131,11 +136,22 @@
             this.CheckOutOrder_Btn.UseVisualStyleBackColor = true;
             this.CheckOutOrder_Btn.Click += new System.EventHandler(this.CheckOutOrder_Btn_Click);
             // 
+            // Username_lbl
+            // 
+            this.Username_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Username_lbl.AutoSize = true;
+            this.Username_lbl.Location = new System.Drawing.Point(715, 9);
+            this.Username_lbl.Name = "Username_lbl";
+            this.Username_lbl.Size = new System.Drawing.Size(73, 17);
+            this.Username_lbl.TabIndex = 8;
+            this.Username_lbl.Text = "Username";
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Username_lbl);
             this.Controls.Add(this.CheckOutOrder_Btn);
             this.Controls.Add(this.CreateOrder_Btn);
             this.Controls.Add(this.OrderName_tbox);
@@ -164,5 +180,6 @@
         private System.Windows.Forms.BindingSource productsBindingSource;
         private System.Windows.Forms.Button CreateOrder_Btn;
         private System.Windows.Forms.Button CheckOutOrder_Btn;
+        private System.Windows.Forms.Label Username_lbl;
     }
 }

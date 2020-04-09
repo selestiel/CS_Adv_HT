@@ -15,6 +15,9 @@ namespace Adv_FinalProject
         public CreateOrder()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Location = Properties.Settings.Default.MFLocation;
+            Username_lbl.Text = Properties.Settings.Default.LoggedInName;
         }
 
         List<Products> prod = new List<Products>();

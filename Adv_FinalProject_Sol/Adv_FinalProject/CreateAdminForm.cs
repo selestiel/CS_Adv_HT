@@ -9,6 +9,8 @@ namespace Adv_FinalProject
         public CreateAdminForm()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Location = Properties.Settings.Default.MFLocation;
         }
 
         private void CreateAdmin_Btn_Click(object sender, EventArgs e)
@@ -46,13 +48,20 @@ namespace Adv_FinalProject
                 Admins NewAdmin = new Admins();
                 Login login = new Login();
                 Password password = new Password();
-                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail);
                 login.SetLogin(Alogin, NewAdmin);
                 password.SetPassword(Apass, NewAdmin);
+                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail,login,password);
                 adb.Logins.Add(login);
                 adb.Passwords.Add(password);
                 adb.Admins.Add(NewAdmin);
-                adb.SaveChanges();
+                try
+                {
+                    adb.SaveChanges();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private bool ValidatePassword(string password, out string ErrorMessage)

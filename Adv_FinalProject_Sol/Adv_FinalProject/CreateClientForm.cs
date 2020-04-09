@@ -16,6 +16,8 @@ namespace Adv_FinalProject
         public CreateClientForm()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Location = Properties.Settings.Default.MFLocation;
         }
 
 
@@ -52,12 +54,12 @@ namespace Adv_FinalProject
                 }
 
                 Clients NewClient = new Clients();
-                NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail);
                 Login login = new Login();
                 Password password = new Password();
                 login.SetLogin(Clogin, NewClient);
-                adb.Logins.Add(login);
                 password.SetPassword(Cpass, NewClient);
+                NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail,login,password);
+                adb.Logins.Add(login);
                 adb.Passwords.Add(password);
                 adb.Clients.Add(NewClient);
                 adb.SaveChanges();

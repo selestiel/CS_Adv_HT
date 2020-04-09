@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Adv_FinalProject
@@ -16,6 +9,10 @@ namespace Adv_FinalProject
         public AdminForm()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Width = Properties.Settings.Default.MFWidth;
+            this.Height = Properties.Settings.Default.MFHeight;
+            this.Location = Properties.Settings.Default.MFLocation;
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
         }
 
@@ -137,8 +134,41 @@ namespace Adv_FinalProject
             // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet2.Admins' table. You can move, or remove it, as needed.
             this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
 
+            timer1.Enabled = true;
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            this.productsTableAdapter.GetData();
+            this.ordersTableAdapter.GetData();
+            this.clientsTableAdapter.GetData();
+            this.adminsTableAdapter.GetData();
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet3.Clients' table. You can move, or remove it, as needed.
+            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Clients);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet2.Admins' table. You can move, or remove it, as needed.
+            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
 
         }
 
+        private void UpdTable_Btn_Click(object sender, EventArgs e)
+        {
+            this.productsTableAdapter.GetData();
+            this.ordersTableAdapter.GetData();
+            this.clientsTableAdapter.GetData();
+            this.adminsTableAdapter.GetData();
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet3.Clients' table. You can move, or remove it, as needed.
+            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Clients);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet2.Admins' table. You can move, or remove it, as needed.
+            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
+
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace Adv_FinalProject
         public virtual ICollection<Orders> Orders { get; }
         public virtual ICollection<Products> Products { get; }
         public virtual ICollection<Clients> Clients { get; }
-        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email)
+        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email, Login login, Password pass)
         {
             Admin_ID++;
             Admin_First_Name = Fname;
@@ -38,16 +38,29 @@ namespace Adv_FinalProject
             Admin_Phone_Number = phone;
             Admin_Email = email;
             Admin_Registration_Date = DateTime.UtcNow;
+            Admin_Login = login;
+            Admin_Password = pass;
         }
         public string GetAdmin(Login login)
         {
-            if (login.Admins_ID == Admin_ID)
+            if (Admin_Login == login)
             {
                 return Admin_First_Name;
             }
             else
             {
                 return "Error";
+            }
+        }
+        public Admins GetAdmin(string name)
+        {
+            if (Admin_First_Name.Equals(name))
+            {
+                return this;
+            }
+            else
+            {
+                return null;
             }
         }
         public Admins()

@@ -29,7 +29,7 @@ namespace Adv_FinalProject
         public Password Client_Password { get; set; }
         public virtual ICollection<Orders> Orders { get; }
         public virtual ICollection<Products> Products { get; }
-        public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email)
+        public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email, Login login, Password pass)
         {
             Client_ID++;
             Client_First_Name = Fname;
@@ -38,10 +38,12 @@ namespace Adv_FinalProject
             Client_Phone_Number = phone;
             Client_Email = email;
             Client_Registration_Date = DateTime.UtcNow;
+            Client_Login = login;
+            Client_Password = pass;
         }
         public string GetClient(Login login)
         {
-            if(Client_ID == login.Clients_ID)
+            if(Client_Login == login)
             {
                 return Client_First_Name;
             }
@@ -52,7 +54,7 @@ namespace Adv_FinalProject
         }
         public Clients GetClient(string name)
         {
-            if (Client_First_Name == name)
+            if (Client_First_Name.Equals(name))
             {
                 return this;
             }

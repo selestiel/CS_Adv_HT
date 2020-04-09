@@ -36,13 +36,6 @@
             this.AddMoney_tbox = new System.Windows.Forms.TextBox();
             this.AddMoney_Btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this._FinalProjectDBContext_MyDbContextModelDataSet2 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2();
-            this.adminsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.adminsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2TableAdapters.AdminsTableAdapter();
             this.adminIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,9 +46,9 @@
             this.adminRegistrationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminLoginLoginIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminPasswordPasswordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._FinalProjectDBContext_MyDbContextModelDataSet3 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ClientsTableAdapter();
+            this.adminsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet2 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,44 +60,51 @@
             this.clientLoginLoginIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientPasswordPasswordIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminsAdminIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._FinalProjectDBContext_MyDbContextModelDataSet = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet();
-            this.finalProjectDBContextMyDbContextModelDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSetTableAdapters.OrdersTableAdapter();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet3 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._FinalProjectDBContext_MyDbContextModelDataSet1 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet1 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1();
+            this.adminsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2TableAdapters.AdminsTableAdapter();
+            this.clientsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ClientsTableAdapter();
+            this.finalProjectDBContextMyDbContextModelDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSetTableAdapters.OrdersTableAdapter();
+            this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.UpdTable_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalProjectDBContextMyDbContextModelDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalProjectDBContextMyDbContextModelDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // CreateClient_Btn
             // 
             this.CreateClient_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CreateClient_Btn.Location = new System.Drawing.Point(763, 26);
+            this.CreateClient_Btn.Location = new System.Drawing.Point(1100, 179);
             this.CreateClient_Btn.Name = "CreateClient_Btn";
             this.CreateClient_Btn.Size = new System.Drawing.Size(109, 38);
             this.CreateClient_Btn.TabIndex = 1;
@@ -115,7 +115,7 @@
             // CreateAdmin_Btn
             // 
             this.CreateAdmin_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CreateAdmin_Btn.Location = new System.Drawing.Point(763, 79);
+            this.CreateAdmin_Btn.Location = new System.Drawing.Point(1100, 135);
             this.CreateAdmin_Btn.Name = "CreateAdmin_Btn";
             this.CreateAdmin_Btn.Size = new System.Drawing.Size(109, 38);
             this.CreateAdmin_Btn.TabIndex = 2;
@@ -126,7 +126,7 @@
             // Override2_Btn
             // 
             this.Override2_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Override2_Btn.Location = new System.Drawing.Point(763, 132);
+            this.Override2_Btn.Location = new System.Drawing.Point(1100, 267);
             this.Override2_Btn.Name = "Override2_Btn";
             this.Override2_Btn.Size = new System.Drawing.Size(109, 51);
             this.Override2_Btn.TabIndex = 3;
@@ -138,7 +138,7 @@
             // 
             this.Username_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Username_lbl.AutoSize = true;
-            this.Username_lbl.Location = new System.Drawing.Point(760, 9);
+            this.Username_lbl.Location = new System.Drawing.Point(1097, 44);
             this.Username_lbl.Name = "Username_lbl";
             this.Username_lbl.Size = new System.Drawing.Size(73, 17);
             this.Username_lbl.TabIndex = 4;
@@ -147,7 +147,7 @@
             // AddMoney_tbox
             // 
             this.AddMoney_tbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddMoney_tbox.Location = new System.Drawing.Point(763, 205);
+            this.AddMoney_tbox.Location = new System.Drawing.Point(1100, 64);
             this.AddMoney_tbox.Name = "AddMoney_tbox";
             this.AddMoney_tbox.Size = new System.Drawing.Size(109, 22);
             this.AddMoney_tbox.TabIndex = 5;
@@ -155,7 +155,7 @@
             // AddMoney_Btn
             // 
             this.AddMoney_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddMoney_Btn.Location = new System.Drawing.Point(763, 234);
+            this.AddMoney_Btn.Location = new System.Drawing.Point(1100, 92);
             this.AddMoney_Btn.Name = "AddMoney_Btn";
             this.AddMoney_Btn.Size = new System.Drawing.Size(109, 37);
             this.AddMoney_Btn.TabIndex = 6;
@@ -165,6 +165,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -180,119 +182,12 @@
             this.adminLoginLoginIDDataGridViewTextBoxColumn,
             this.adminPasswordPasswordIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.adminsBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(881, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(1048, 150);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientIDDataGridViewTextBoxColumn,
-            this.clientFirstNameDataGridViewTextBoxColumn,
-            this.clientLastNameDataGridViewTextBoxColumn,
-            this.clientEmailDataGridViewTextBoxColumn,
-            this.clientPhoneNumberDataGridViewTextBoxColumn,
-            this.clientMoneyDataGridViewTextBoxColumn,
-            this.clientBirthDateDataGridViewTextBoxColumn,
-            this.clientRegistrationDateDataGridViewTextBoxColumn,
-            this.clientLoginLoginIDDataGridViewTextBoxColumn,
-            this.clientPasswordPasswordIDDataGridViewTextBoxColumn,
-            this.adminsAdminIDDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.clientsBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 168);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(881, 150);
-            this.dataGridView2.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderIDDataGridViewTextBoxColumn,
-            this.orderNameDataGridViewTextBoxColumn,
-            this.orderPriceDataGridViewTextBoxColumn,
-            this.orderDateDataGridViewTextBoxColumn,
-            this.adminIDDataGridViewTextBoxColumn1,
-            this.clientIDDataGridViewTextBoxColumn1});
-            this.dataGridView3.DataSource = this.ordersBindingSource;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 318);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(881, 150);
-            this.dataGridView3.TabIndex = 8;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AutoGenerateColumns = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dataGridView4.ColumnHeadersHeight = 29;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.productIDDataGridViewTextBoxColumn,
-            this.productNameDataGridViewTextBoxColumn,
-            this.productManufacturerDataGridViewTextBoxColumn,
-            this.productPriceDataGridViewTextBoxColumn,
-            this.productAmountDataGridViewTextBoxColumn});
-            this.dataGridView4.DataSource = this.productsBindingSource;
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 468);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(881, 150);
-            this.dataGridView4.TabIndex = 0;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.dataGridView4);
-            this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Controls.Add(this.AddMoney_Btn);
-            this.groupBox1.Controls.Add(this.AddMoney_tbox);
-            this.groupBox1.Controls.Add(this.Username_lbl);
-            this.groupBox1.Controls.Add(this.Override2_Btn);
-            this.groupBox1.Controls.Add(this.CreateAdmin_Btn);
-            this.groupBox1.Controls.Add(this.CreateClient_Btn);
-            this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.MaximumSize = new System.Drawing.Size(1920, 1080);
-            this.groupBox1.MinimumSize = new System.Drawing.Size(800, 600);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(887, 622);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet2
-            // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet2.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet2";
-            this._FinalProjectDBContext_MyDbContextModelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adminsBindingSource
-            // 
-            this.adminsBindingSource.DataMember = "Admins";
-            this.adminsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet2;
-            // 
-            // adminsTableAdapter
-            // 
-            this.adminsTableAdapter.ClearBeforeFill = true;
             // 
             // adminIDDataGridViewTextBoxColumn
             // 
@@ -375,19 +270,42 @@
             this.adminPasswordPasswordIDDataGridViewTextBoxColumn.Name = "adminPasswordPasswordIDDataGridViewTextBoxColumn";
             this.adminPasswordPasswordIDDataGridViewTextBoxColumn.Width = 235;
             // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet3
+            // adminsBindingSource
             // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet3.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet3";
-            this._FinalProjectDBContext_MyDbContextModelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.adminsBindingSource.DataMember = "Admins";
+            this.adminsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet2;
             // 
-            // clientsBindingSource
+            // _FinalProjectDBContext_MyDbContextModelDataSet2
             // 
-            this.clientsBindingSource.DataMember = "Clients";
-            this.clientsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet3;
+            this._FinalProjectDBContext_MyDbContextModelDataSet2.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet2";
+            this._FinalProjectDBContext_MyDbContextModelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // clientsTableAdapter
+            // dataGridView2
             // 
-            this.clientsTableAdapter.ClearBeforeFill = true;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clientIDDataGridViewTextBoxColumn,
+            this.clientFirstNameDataGridViewTextBoxColumn,
+            this.clientLastNameDataGridViewTextBoxColumn,
+            this.clientEmailDataGridViewTextBoxColumn,
+            this.clientPhoneNumberDataGridViewTextBoxColumn,
+            this.clientMoneyDataGridViewTextBoxColumn,
+            this.clientBirthDateDataGridViewTextBoxColumn,
+            this.clientRegistrationDateDataGridViewTextBoxColumn,
+            this.clientLoginLoginIDDataGridViewTextBoxColumn,
+            this.clientPasswordPasswordIDDataGridViewTextBoxColumn,
+            this.adminsAdminIDDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.clientsBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(12, 168);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(1048, 150);
+            this.dataGridView2.TabIndex = 7;
             // 
             // clientIDDataGridViewTextBoxColumn
             // 
@@ -396,6 +314,7 @@
             this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             this.clientIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clientIDDataGridViewTextBoxColumn.Width = 93;
             // 
             // clientFirstNameDataGridViewTextBoxColumn
             // 
@@ -403,6 +322,7 @@
             this.clientFirstNameDataGridViewTextBoxColumn.HeaderText = "Client_First_Name";
             this.clientFirstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientFirstNameDataGridViewTextBoxColumn.Name = "clientFirstNameDataGridViewTextBoxColumn";
+            this.clientFirstNameDataGridViewTextBoxColumn.Width = 152;
             // 
             // clientLastNameDataGridViewTextBoxColumn
             // 
@@ -410,6 +330,7 @@
             this.clientLastNameDataGridViewTextBoxColumn.HeaderText = "Client_Last_Name";
             this.clientLastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientLastNameDataGridViewTextBoxColumn.Name = "clientLastNameDataGridViewTextBoxColumn";
+            this.clientLastNameDataGridViewTextBoxColumn.Width = 152;
             // 
             // clientEmailDataGridViewTextBoxColumn
             // 
@@ -417,6 +338,7 @@
             this.clientEmailDataGridViewTextBoxColumn.HeaderText = "Client_Email";
             this.clientEmailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientEmailDataGridViewTextBoxColumn.Name = "clientEmailDataGridViewTextBoxColumn";
+            this.clientEmailDataGridViewTextBoxColumn.Width = 114;
             // 
             // clientPhoneNumberDataGridViewTextBoxColumn
             // 
@@ -424,6 +346,7 @@
             this.clientPhoneNumberDataGridViewTextBoxColumn.HeaderText = "Client_Phone_Number";
             this.clientPhoneNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientPhoneNumberDataGridViewTextBoxColumn.Name = "clientPhoneNumberDataGridViewTextBoxColumn";
+            this.clientPhoneNumberDataGridViewTextBoxColumn.Width = 179;
             // 
             // clientMoneyDataGridViewTextBoxColumn
             // 
@@ -431,6 +354,7 @@
             this.clientMoneyDataGridViewTextBoxColumn.HeaderText = "Client_Money";
             this.clientMoneyDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientMoneyDataGridViewTextBoxColumn.Name = "clientMoneyDataGridViewTextBoxColumn";
+            this.clientMoneyDataGridViewTextBoxColumn.Width = 122;
             // 
             // clientBirthDateDataGridViewTextBoxColumn
             // 
@@ -438,6 +362,7 @@
             this.clientBirthDateDataGridViewTextBoxColumn.HeaderText = "Client_Birth_Date";
             this.clientBirthDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientBirthDateDataGridViewTextBoxColumn.Name = "clientBirthDateDataGridViewTextBoxColumn";
+            this.clientBirthDateDataGridViewTextBoxColumn.Width = 147;
             // 
             // clientRegistrationDateDataGridViewTextBoxColumn
             // 
@@ -445,6 +370,7 @@
             this.clientRegistrationDateDataGridViewTextBoxColumn.HeaderText = "Client_Registration_Date";
             this.clientRegistrationDateDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientRegistrationDateDataGridViewTextBoxColumn.Name = "clientRegistrationDateDataGridViewTextBoxColumn";
+            this.clientRegistrationDateDataGridViewTextBoxColumn.Width = 194;
             // 
             // clientLoginLoginIDDataGridViewTextBoxColumn
             // 
@@ -452,6 +378,7 @@
             this.clientLoginLoginIDDataGridViewTextBoxColumn.HeaderText = "Client_Login_Login_ID";
             this.clientLoginLoginIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientLoginLoginIDDataGridViewTextBoxColumn.Name = "clientLoginLoginIDDataGridViewTextBoxColumn";
+            this.clientLoginLoginIDDataGridViewTextBoxColumn.Width = 179;
             // 
             // clientPasswordPasswordIDDataGridViewTextBoxColumn
             // 
@@ -459,6 +386,7 @@
             this.clientPasswordPasswordIDDataGridViewTextBoxColumn.HeaderText = "Client_Password_Password_ID";
             this.clientPasswordPasswordIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.clientPasswordPasswordIDDataGridViewTextBoxColumn.Name = "clientPasswordPasswordIDDataGridViewTextBoxColumn";
+            this.clientPasswordPasswordIDDataGridViewTextBoxColumn.Width = 231;
             // 
             // adminsAdminIDDataGridViewTextBoxColumn
             // 
@@ -466,25 +394,39 @@
             this.adminsAdminIDDataGridViewTextBoxColumn.HeaderText = "Admins_Admin_ID";
             this.adminsAdminIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.adminsAdminIDDataGridViewTextBoxColumn.Name = "adminsAdminIDDataGridViewTextBoxColumn";
+            this.adminsAdminIDDataGridViewTextBoxColumn.Width = 151;
             // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet
+            // clientsBindingSource
             // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet";
-            this._FinalProjectDBContext_MyDbContextModelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.clientsBindingSource.DataMember = "Clients";
+            this.clientsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet3;
             // 
-            // finalProjectDBContextMyDbContextModelDataSetBindingSource
+            // _FinalProjectDBContext_MyDbContextModelDataSet3
             // 
-            this.finalProjectDBContextMyDbContextModelDataSetBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet;
-            this.finalProjectDBContextMyDbContextModelDataSetBindingSource.Position = 0;
+            this._FinalProjectDBContext_MyDbContextModelDataSet3.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet3";
+            this._FinalProjectDBContext_MyDbContextModelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // ordersBindingSource
+            // dataGridView3
             // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderIDDataGridViewTextBoxColumn,
+            this.orderNameDataGridViewTextBoxColumn,
+            this.orderPriceDataGridViewTextBoxColumn,
+            this.orderDateDataGridViewTextBoxColumn,
+            this.adminIDDataGridViewTextBoxColumn1,
+            this.clientIDDataGridViewTextBoxColumn1});
+            this.dataGridView3.DataSource = this.ordersBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(12, 324);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(1048, 150);
+            this.dataGridView3.TabIndex = 8;
             // 
             // orderIDDataGridViewTextBoxColumn
             // 
@@ -529,19 +471,35 @@
             this.clientIDDataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.clientIDDataGridViewTextBoxColumn1.Name = "clientIDDataGridViewTextBoxColumn1";
             // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet1
+            // ordersBindingSource
             // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet1.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet1";
-            this._FinalProjectDBContext_MyDbContextModelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet;
             // 
-            // productsBindingSource
+            // _FinalProjectDBContext_MyDbContextModelDataSet
             // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet1;
+            this._FinalProjectDBContext_MyDbContextModelDataSet.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet";
+            this._FinalProjectDBContext_MyDbContextModelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // productsTableAdapter
+            // dataGridView4
             // 
-            this.productsTableAdapter.ClearBeforeFill = true;
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.ColumnHeadersHeight = 29;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.productManufacturerDataGridViewTextBoxColumn,
+            this.productPriceDataGridViewTextBoxColumn,
+            this.productAmountDataGridViewTextBoxColumn});
+            this.dataGridView4.DataSource = this.productsBindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(12, 480);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
+            this.dataGridView4.Size = new System.Drawing.Size(1048, 150);
+            this.dataGridView4.TabIndex = 0;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -579,32 +537,87 @@
             this.productAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet1;
+            // 
+            // _FinalProjectDBContext_MyDbContextModelDataSet1
+            // 
+            this._FinalProjectDBContext_MyDbContextModelDataSet1.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet1";
+            this._FinalProjectDBContext_MyDbContextModelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adminsTableAdapter
+            // 
+            this.adminsTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientsTableAdapter
+            // 
+            this.clientsTableAdapter.ClearBeforeFill = true;
+            // 
+            // finalProjectDBContextMyDbContextModelDataSetBindingSource
+            // 
+            this.finalProjectDBContextMyDbContextModelDataSetBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet;
+            this.finalProjectDBContextMyDbContextModelDataSetBindingSource.Position = 0;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 60000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // UpdTable_Btn
+            // 
+            this.UpdTable_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdTable_Btn.Location = new System.Drawing.Point(1100, 223);
+            this.UpdTable_Btn.Name = "UpdTable_Btn";
+            this.UpdTable_Btn.Size = new System.Drawing.Size(109, 34);
+            this.UpdTable_Btn.TabIndex = 10;
+            this.UpdTable_Btn.Text = "Update Table";
+            this.UpdTable_Btn.UseVisualStyleBackColor = true;
+            this.UpdTable_Btn.Click += new System.EventHandler(this.UpdTable_Btn_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 622);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1233, 750);
+            this.Controls.Add(this.UpdTable_Btn);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.CreateAdmin_Btn);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.CreateClient_Btn);
+            this.Controls.Add(this.Override2_Btn);
+            this.Controls.Add(this.Username_lbl);
+            this.Controls.Add(this.AddMoney_Btn);
+            this.Controls.Add(this.AddMoney_tbox);
             this.MaximumSize = new System.Drawing.Size(1920, 1080);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalProjectDBContextMyDbContextModelDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalProjectDBContextMyDbContextModelDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,7 +635,6 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.GroupBox groupBox1;
         private _FinalProjectDBContext_MyDbContextModelDataSet2 _FinalProjectDBContext_MyDbContextModelDataSet2;
         private System.Windows.Forms.BindingSource adminsBindingSource;
         private _FinalProjectDBContext_MyDbContextModelDataSet2TableAdapters.AdminsTableAdapter adminsTableAdapter;
@@ -668,5 +680,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button UpdTable_Btn;
     }
 }

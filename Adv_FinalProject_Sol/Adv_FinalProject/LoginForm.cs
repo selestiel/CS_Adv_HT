@@ -11,6 +11,8 @@ namespace Adv_FinalProject
         public LoginForm()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Location = Properties.Settings.Default.MFLocation;
         }
         private void MfRet()
         {
@@ -34,7 +36,7 @@ namespace Adv_FinalProject
                         {
                             if (pasc.Password_Name.Equals(Pass) & logc.Admins_ID == pasc.Admins_ID)
                             {
-                                if (logc.Admins_ID != 0)
+                                if (logc.Admins_ID != null)
                                 {
                                     Hide();
                                     AdminForm Aform = new AdminForm();
@@ -45,29 +47,34 @@ namespace Adv_FinalProject
                                 else
                                 {
                                     MessageBox.Show("Error wrong Login or Password!");
+                                }
+                            }
+                            else 
+                            {
+                                if (pasc.Password_Name.Equals(Pass) & logc.Clients_ID == pasc.Clients_ID)
+                                {
+                                    if (logc.Admins_ID != null)
+                                    {
+                                        Hide();
+                                        ClientForm Cform = new ClientForm();
+                                        Cform.Show();
+                                        Clients clients = new Clients();
+                                        Properties.Settings.Default.LoggedInName = clients.GetClient(logc);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Error wrong Login or Password!");
+                                    }
+                                }
+                                else
+                                {
                                     MfRet();
                                 }
                             }
-                            else if (pasc.Password_Name.Equals(Pass) & logc.Clients_ID == pasc.Clients_ID)
-                            {
-                                Hide();
-                                ClientForm Cform = new ClientForm();
-                                Cform.Show();
-                                Clients clients = new Clients();
-                                Properties.Settings.Default.LoggedInName = clients.GetClient(logc);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error wrong Login or Password!");
-                                MfRet();
-                            }
+                           
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Error wrong Login or Password!");
-                        MfRet();
-                    }
+                   
                 }
             }
         }
