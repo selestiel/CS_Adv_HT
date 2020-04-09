@@ -16,9 +16,9 @@ namespace Adv_FinalProject
 
         public DateTime Order_Date { get; set; }
 
-        public int? Admin_ID { get; set; }
+        public int Admin_ID { get; set; }
 
-        public int? Client_ID { get; set; }
+        public int Client_ID { get; set; }
 
         public virtual ICollection<Admins> Admins { get; }
 

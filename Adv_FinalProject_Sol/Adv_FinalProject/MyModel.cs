@@ -15,7 +15,6 @@ namespace Adv_FinalProject
         public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
-        public virtual DbSet<Password> Passwords { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Products> Products { get; set; }
 
@@ -35,9 +34,6 @@ namespace Adv_FinalProject
 
             modelBuilder.Entity<Login>().HasKey(k => k.Login_ID);
             modelBuilder.Entity<Login>().Map(m => m.ToTable("Logins"));
-
-            modelBuilder.Entity<Password>().HasKey(k => k.Password_ID);
-            modelBuilder.Entity<Password>().Map(m => m.ToTable("Passwords"));
 
             modelBuilder.Entity<Orders>().HasKey(k => k.Order_ID);
             modelBuilder.Entity<Orders>().HasMany(p => p.Products);

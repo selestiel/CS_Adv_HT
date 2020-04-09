@@ -11,18 +11,21 @@ namespace Adv_FinalProject
     {
         public int Login_ID { get; set; }
         public string Login_Name { get; set; }
+        public string Password_Name { get; set; }
         public int Admins_ID { get; set; }
         public int Clients_ID { get; set; }
-        public void SetLogin(string name,Admins admin)
+        public void SetLogin(string lname, string pname,Admins admin)
         {
             Login_ID++;
-            Login_Name = name;
+            Login_Name = lname;
+            Password_Name = pname;
             Admins_ID = admin.Admin_ID;
         }
-        public void SetLogin(string name, Clients client)
+        public void SetLogin(string lname, string pname, Clients client)
         {
             Login_ID++;
-            Login_Name = name;
+            Login_Name = lname;
+            Password_Name = pname;
             Clients_ID = client.Client_ID;
         }
         public string GetLogin(Admins admins)

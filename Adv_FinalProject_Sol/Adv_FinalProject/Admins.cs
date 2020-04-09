@@ -25,11 +25,10 @@ namespace Adv_FinalProject
 
         public DateTime Admin_Registration_Date { get; set; }
         public Login Admin_Login { get; set; }
-        public Password Admin_Password { get; set; }
         public virtual ICollection<Orders> Orders { get; }
         public virtual ICollection<Products> Products { get; }
         public virtual ICollection<Clients> Clients { get; }
-        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email, Login login, Password pass)
+        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email, Login login)
         {
             Admin_ID++;
             Admin_First_Name = Fname;
@@ -39,7 +38,6 @@ namespace Adv_FinalProject
             Admin_Email = email;
             Admin_Registration_Date = DateTime.UtcNow;
             Admin_Login = login;
-            Admin_Password = pass;
         }
         public string GetAdmin(Login login)
         {

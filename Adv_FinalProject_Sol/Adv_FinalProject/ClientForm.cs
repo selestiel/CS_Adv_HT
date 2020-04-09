@@ -50,20 +50,17 @@ namespace Adv_FinalProject
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet1.Products' table. You can move, or remove it, as needed.
             this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
             timer1.Enabled = true;
             timer1.Start();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {
             this.productsTableAdapter.GetData();
             this.ordersTableAdapter.GetData();
             this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
 
         }
@@ -73,7 +70,6 @@ namespace Adv_FinalProject
             this.productsTableAdapter.GetData();
             this.ordersTableAdapter.GetData();
             this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
             this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
 
         }

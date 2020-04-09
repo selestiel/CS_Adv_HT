@@ -105,7 +105,6 @@
     </Compile>
     <Compile Include="MyModel.cs" />
     <Compile Include="Orders.cs" />
-    <Compile Include="Password.cs" />
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

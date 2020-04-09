@@ -26,59 +26,37 @@ namespace Adv_FinalProject
         }
         private void Login_Btn_Click(object sender, EventArgs e)
         {
-            string Login = Login_textbox.Text;
-            string Pass = Password_textbox.Text;
-
-
             using (var lpdb = new MyModel())
             {
-                foreach (Login logc in lpdb.Logins)
+                if (Admin_Checkbox.Checked == true)
                 {
-                    if (logc.Login_Name.Equals(Login))
+                    var ar = (from adm in lpdb.Admins where adm.Admin_Login.Login_Name == Login_textbox.Text select adm).FirstOrDefault();
+                    if (ar.Admin_Login.Password_Name == Password_textbox.Text)
                     {
-                        foreach (Password pasc in lpdb.Passwords)
-                        {
-                            if (pasc.Password_Name.Equals(Pass) & logc.Admins_ID == pasc.Admins_ID)
-                            {
-                                if (logc.Admins_ID != null)
-                                {
-                                    Hide();
-                                    AdminForm Aform = new AdminForm();
-                                    Aform.Show();
-                                    Admins admins = new Admins();
-                                    Properties.Settings.Default.LoggedInName = admins.GetAdmin(logc);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error wrong Login or Password!");
-                                }
-                            }
-                            else 
-                            {
-                                if (pasc.Password_Name.Equals(Pass) & logc.Clients_ID == pasc.Clients_ID)
-                                {
-                                    if (logc.Admins_ID != null)
-                                    {
-                                        Hide();
-                                        ClientForm Cform = new ClientForm();
-                                        Cform.Show();
-                                        Clients clients = new Clients();
-                                        Properties.Settings.Default.LoggedInName = clients.GetClient(logc);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Error wrong Login or Password!");
-                                    }
-                                }
-                                else
-                                {
-                                    MfRet();
-                                }
-                            }
-                           
-                        }
+                        Close();
+                        AdminForm Aform = new AdminForm();
+                        Aform.Show();
+                        Properties.Settings.Default.LoggedInName = ar.Admin_First_Name;
                     }
-                   
+                    else
+                    {
+                        MfRet();
+                    }
+                }
+                else
+                {
+                    var cr = (from cli in lpdb.Clients where cli.Client_Login.Login_Name == Login_textbox.Text select cli).FirstOrDefault();
+                    if (cr.Client_Login.Password_Name == Password_textbox.Text)
+                    {
+                        Close();
+                        AdminForm Aform = new AdminForm();
+                        Aform.Show();
+                        Properties.Settings.Default.LoggedInName = cr.Client_First_Name;
+                    }
+                    else
+                    {
+                        MfRet();
+                    }
                 }
             }
         }

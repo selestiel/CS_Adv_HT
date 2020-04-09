@@ -51,12 +51,9 @@ namespace Adv_FinalProject
 
                 Admins NewAdmin = new Admins();
                 Login login = new Login();
-                Password password = new Password();
-                login.SetLogin(Alogin, NewAdmin);
-                password.SetPassword(Apass, NewAdmin);
-                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail,login,password);
+                login.SetLogin(Alogin, Apass,NewAdmin);
+                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail,login);
                 adb.Logins.Add(login);
-                adb.Passwords.Add(password);
                 adb.Admins.Add(NewAdmin);
                 try
                 {

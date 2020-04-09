@@ -35,6 +35,7 @@
             this.Account_Info_lbl = new System.Windows.Forms.Label();
             this.Login_Btn = new System.Windows.Forms.Button();
             this.Override_Btn = new System.Windows.Forms.Button();
+            this.Admin_Checkbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Login_lbl
@@ -105,11 +106,22 @@
             this.Override_Btn.UseVisualStyleBackColor = true;
             this.Override_Btn.Click += new System.EventHandler(this.Override_Btn_Click);
             // 
+            // Admin_Checkbox
+            // 
+            this.Admin_Checkbox.AutoSize = true;
+            this.Admin_Checkbox.Location = new System.Drawing.Point(644, 368);
+            this.Admin_Checkbox.Name = "Admin_Checkbox";
+            this.Admin_Checkbox.Size = new System.Drawing.Size(77, 21);
+            this.Admin_Checkbox.TabIndex = 5;
+            this.Admin_Checkbox.Text = "Admin?";
+            this.Admin_Checkbox.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Admin_Checkbox);
             this.Controls.Add(this.Override_Btn);
             this.Controls.Add(this.Login_Btn);
             this.Controls.Add(this.Account_Info_lbl);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.Label Account_Info_lbl;
         private System.Windows.Forms.Button Login_Btn;
         private System.Windows.Forms.Button Override_Btn;
+        private System.Windows.Forms.CheckBox Admin_Checkbox;
     }
 }
