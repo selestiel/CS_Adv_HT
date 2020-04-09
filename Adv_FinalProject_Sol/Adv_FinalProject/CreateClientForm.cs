@@ -59,7 +59,7 @@ namespace Adv_FinalProject
                 Clients NewClient = new Clients();
                 Login login = new Login();
                 login.SetLogin(Clogin,Cpass, NewClient);
-                NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail,login);
+                NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail,login,login.Login_Name,login.Password_Name);
                 adb.Logins.Add(login);
                 adb.Clients.Add(NewClient);
                 adb.SaveChanges();

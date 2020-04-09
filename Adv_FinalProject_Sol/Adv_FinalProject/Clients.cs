@@ -26,9 +26,11 @@ namespace Adv_FinalProject
         public DateTime Client_Registration_Date { get; set; }
 
         public Login Client_Login { get; set; }
+        public string Client_Login_Name { get; set; }
+        public string Client_Login_Pass_Name { get; set; }
         public virtual ICollection<Orders> Orders { get; }
         public virtual ICollection<Products> Products { get; }
-        public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email, Login login)
+        public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email, Login login, string nlogin,string npass)
         {
             Client_ID++;
             Client_First_Name = Fname;
@@ -38,6 +40,8 @@ namespace Adv_FinalProject
             Client_Email = email;
             Client_Registration_Date = DateTime.UtcNow;
             Client_Login = login;
+            Client_Login_Name = nlogin;
+            Client_Login_Pass_Name = npass;
         }
         public string GetClient(Login login)
         {
@@ -52,7 +56,7 @@ namespace Adv_FinalProject
         }
         public Clients GetClient(string name)
         {
-            if (Client_First_Name.Equals(name))
+            if (Client_First_Name == name)
             {
                 return this;
             }

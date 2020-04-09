@@ -62,11 +62,10 @@ namespace Adv_FinalProject
 
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
-            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Clients);
-            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
-
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
+            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Clients);
+            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Admins);
             timer1.Enabled = true;
             timer1.Start();
         }
@@ -78,10 +77,10 @@ namespace Adv_FinalProject
             this.ordersTableAdapter.GetData();
             this.clientsTableAdapter.GetData();
             this.adminsTableAdapter.GetData();
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
-            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Clients);
-            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
+            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Clients);
+            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Admins);
 
         }
 
@@ -91,11 +90,12 @@ namespace Adv_FinalProject
             this.ordersTableAdapter.GetData();
             this.clientsTableAdapter.GetData();
             this.adminsTableAdapter.GetData();
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
-            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Clients);
-            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Admins);
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
+            this.clientsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Clients);
+            this.adminsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Admins);
 
         }
+
     }
 }

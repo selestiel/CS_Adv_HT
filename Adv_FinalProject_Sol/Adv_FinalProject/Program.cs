@@ -24,13 +24,13 @@ namespace Adv_FinalProject
                 Admins admins = new Admins();
                 Login login = new Login();
                 login.SetLogin("Admin123", "pass1234", admins);
-                admins.CreateAdmin("Admintor", "RootAdmin", "02.03.2020", "+380555556399", "Admin@myapp.com",login);
+                admins.CreateAdmin("Admintor", "RootAdmin", "02.03.2020", "+380555556399", "Admin@myapp.com",login,login.Login_Name,login.Password_Name);
                 adb.Logins.Add(login);
                 adb.Admins.Add(admins);
                 Clients clients = new Clients();
                 Login login1 = new Login();
                 login1.SetLogin("user1234", "pass9876", clients);
-                clients.CreateClient("Client01", "Jugo", "20.02.2012", "+380223256477", "Jugo@harvd.com",login);
+                clients.CreateClient("Client01", "Jugo", "20.02.2012", "+380223256477", "Jugo@harvd.com",login1,login1.Login_Name,login1.Password_Name);
                 adb.Logins.Add(login1);
                 adb.Clients.Add(clients);
                 Products products = new Products();

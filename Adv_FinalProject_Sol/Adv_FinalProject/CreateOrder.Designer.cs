@@ -37,9 +37,6 @@
             this.CreateOrder_Btn = new System.Windows.Forms.Button();
             this.CheckOutOrder_Btn = new System.Windows.Forms.Button();
             this.Username_lbl = new System.Windows.Forms.Label();
-            this._FinalProjectDBContext_MyDbContextModelDataSet1 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter();
             this.ViewCheck_Btn = new System.Windows.Forms.Button();
             this.Products_Dgv = new System.Windows.Forms.DataGridView();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +44,13 @@
             this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet3 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3();
+            this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter();
+            this.Timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // ProdList_lbl
@@ -138,20 +139,6 @@
             this.Username_lbl.TabIndex = 8;
             this.Username_lbl.Text = "Username";
             // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet1
-            // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet1.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet1";
-            this._FinalProjectDBContext_MyDbContextModelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet1;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
             // ViewCheck_Btn
             // 
             this.ViewCheck_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -187,7 +174,7 @@
             this.Products_Dgv.RowHeadersWidth = 51;
             this.Products_Dgv.RowTemplate.Height = 24;
             this.Products_Dgv.Size = new System.Drawing.Size(775, 200);
-            this.Products_Dgv.TabIndex = 10;
+            this.Products_Dgv.TabIndex = 0;
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -225,6 +212,25 @@
             this.productAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet3;
+            // 
+            // _FinalProjectDBContext_MyDbContextModelDataSet3
+            // 
+            this._FinalProjectDBContext_MyDbContextModelDataSet3.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet3";
+            this._FinalProjectDBContext_MyDbContextModelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // Timer1
+            // 
+            this.Timer1.Interval = 60000;
+            this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,9 +249,9 @@
             this.Name = "CreateOrder";
             this.Text = "CreateOrder";
             this.Load += new System.EventHandler(this.CreateOrder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,15 +266,16 @@
         private System.Windows.Forms.Button CreateOrder_Btn;
         private System.Windows.Forms.Button CheckOutOrder_Btn;
         private System.Windows.Forms.Label Username_lbl;
-        private _FinalProjectDBContext_MyDbContextModelDataSet1 _FinalProjectDBContext_MyDbContextModelDataSet1;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private _FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.Button ViewCheck_Btn;
         private System.Windows.Forms.DataGridView Products_Dgv;
+        private _FinalProjectDBContext_MyDbContextModelDataSet3 _FinalProjectDBContext_MyDbContextModelDataSet3;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private _FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter productsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Timer Timer1;
     }
 }

@@ -50,8 +50,8 @@ namespace Adv_FinalProject
 
         private void ClientForm_Load(object sender, EventArgs e)
         {
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
             timer1.Enabled = true;
             timer1.Start();
         }
@@ -60,8 +60,8 @@ namespace Adv_FinalProject
         {
             this.productsTableAdapter.GetData();
             this.ordersTableAdapter.GetData();
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
 
         }
 
@@ -69,8 +69,8 @@ namespace Adv_FinalProject
         {
             this.productsTableAdapter.GetData();
             this.ordersTableAdapter.GetData();
-            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
-            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet2.Orders);
 
         }
     }

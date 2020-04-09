@@ -24,7 +24,6 @@ namespace Adv_FinalProject
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor; 
             this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
-
         }
         private void x800x600ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -95,12 +94,14 @@ namespace Adv_FinalProject
             dialog.ShowDialog();
             Properties.Settings.Default.MFColor = dialog.Color;
             this.BackColor = Properties.Settings.Default.MFColor;
+            Properties.Settings.Default.Save();
 
         }
         private void Upd_Size()
         {
             this.Width = Properties.Settings.Default.MFWidth;
             this.Height = Properties.Settings.Default.MFHeight;
+            Properties.Settings.Default.Save();
         }
 
         private void Login_BTN_Click(object sender, EventArgs e)
@@ -149,6 +150,7 @@ namespace Adv_FinalProject
             colorDialog.ShowDialog();
             this.ForeColor = colorDialog.Color;
             Properties.Settings.Default.TextColor = this.ForeColor;
+            Properties.Settings.Default.Save();
         }
 
         private void fontSizeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,6 +159,7 @@ namespace Adv_FinalProject
             font.ShowDialog();
             this.Font = font.Font;
             Properties.Settings.Default.TextFont = this.Font;
+            Properties.Settings.Default.Save();
         }
     }
 }

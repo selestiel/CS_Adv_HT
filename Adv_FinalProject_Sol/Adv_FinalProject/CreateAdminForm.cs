@@ -52,7 +52,7 @@ namespace Adv_FinalProject
                 Admins NewAdmin = new Admins();
                 Login login = new Login();
                 login.SetLogin(Alogin, Apass,NewAdmin);
-                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail,login);
+                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail,login,login.Login_Name,login.Password_Name);
                 adb.Logins.Add(login);
                 adb.Admins.Add(NewAdmin);
                 try
