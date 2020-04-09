@@ -13,42 +13,48 @@ namespace Adv_FinalProject
 
         private void CreateAdmin_Btn_Click(object sender, EventArgs e)
         {
-
-            string AFname = AdminFName_tbox.Text;
-            string ALname = AdminLName_tbox.Text;
-            string Aphone = AdminPhone_tbox.Text;
-            string Aemail = AdminEmail_tbox.Text;
-            string ABDate = AdminBDate_tbox.Text;
-            string UcAlogin = AdminLogin_tbox.Text;
-            string UcAPass = AdminPassword_tbox.Text;
-            string Alogin = "";
-            string Apass = "";
-            if (ValidateLogin(UcAlogin, out UcAlogin) == true)
+            using (MyModel adb = new MyModel())
             {
-                Alogin = UcAlogin;
-                if (ValidatePassword(UcAPass, out UcAPass) == true)
+                string AFname = AdminFName_tbox.Text;
+                string ALname = AdminLName_tbox.Text;
+                string Aphone = AdminPhone_tbox.Text;
+                string Aemail = AdminEmail_tbox.Text;
+                string ABDate = AdminBDate_tbox.Text;
+                string UcAlogin = AdminLogin_tbox.Text;
+                string UcAPass = AdminPassword_tbox.Text;
+                string Alogin = "";
+                string Apass = "";
+                if (ValidateLogin(UcAlogin, out UcAlogin) == true)
                 {
-                    Apass = UcAPass;
-                    MessageBox.Show("Admin Created!");
-                    Close();
+                    Alogin = UcAlogin;
+                    if (ValidatePassword(UcAPass, out UcAPass) == true)
+                    {
+                        Apass = UcAPass;
+                        MessageBox.Show("Admin Created!");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error wrong password input");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error wrong password input");
+                    MessageBox.Show("Error wrong login input");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error wrong login input");
-            }
 
-            Admins NewAdmin = new Admins();
-            Login login = new Login();
-            Password password = new Password();
-            NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail);
-            login.SetLogin(Alogin, NewAdmin);
-            password.SetPassword(Apass, NewAdmin);
+                Admins NewAdmin = new Admins();
+                Login login = new Login();
+                Password password = new Password();
+                NewAdmin.CreateAdmin(AFname, ALname, ABDate, Aphone, Aemail);
+                login.SetLogin(Alogin, NewAdmin);
+                password.SetPassword(Apass, NewAdmin);
+                adb.Logins.Add(login);
+                adb.Passwords.Add(password);
+                adb.Admins.Add(NewAdmin);
+                adb.SaveChanges();
             }
+        }
         private bool ValidatePassword(string password, out string ErrorMessage)
         {
             var input = password;

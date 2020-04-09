@@ -12,7 +12,6 @@ namespace Adv_FinalProject
         {
         }
 
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Clients> Clients { get; set; }
         public virtual DbSet<Login> Logins { get; set; }
@@ -22,49 +21,33 @@ namespace Adv_FinalProject
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Admins>()
-                .HasMany(e => e.Products)
-                .WithMany(e => e.Admins)
-                .Map(m => m.ToTable("ProductsAdmins"));
-            modelBuilder.Entity<Admins>()
-                .HasMany(e => e.Orders)
-                .WithMany(e => e.Admins)
-                .Map(m => m.ToTable("OrdersAdmins"));
-            modelBuilder.Entity<Clients>()
-                .HasMany(e => e.Orders)
-                .WithMany(e => e.Clients)
-                .Map(m => m.ToTable("OrdersClients"));
-            modelBuilder.Entity<Clients>()
-                .HasMany(e => e.Products)
-                .WithMany(e => e.Clients)
-                .Map(m => m.ToTable("ProductsClients"));
+            modelBuilder.Entity<Admins>().HasKey(k => k.Admin_ID);
+            modelBuilder.Entity<Admins>().HasMany(p => p.Orders);
+            modelBuilder.Entity<Admins>().HasMany(p => p.Clients);
+            modelBuilder.Entity<Admins>().HasMany(p => p.Products);
+            modelBuilder.Entity<Admins>().Map(m => m.ToTable("Admins"));
 
-            modelBuilder.Entity<Login>()
-                .HasKey(e => e.Login_ID)
-                .HasKey(e => e.Admins_ID)
-                .HasKey(e => e.Clients_ID)
-                .Property(e => e.Login_Name);
 
-            modelBuilder.Entity<Password>()
-                .HasKey(e => e.Password_ID)
-                .HasKey(e => e.Admins_ID)
-                .HasKey(e => e.Clients_ID)
-                .Property(e => e.Password_Name);
+            modelBuilder.Entity<Clients>().HasKey(k => k.Client_ID);
+            modelBuilder.Entity<Clients>().HasMany(p => p.Orders);
+            modelBuilder.Entity<Clients>().HasMany(p => p.Products);
+            modelBuilder.Entity<Clients>().Map(m => m.ToTable("Clients"));
 
-            modelBuilder.Entity<Orders>()
-                .HasMany(e => e.Products)
-                .WithMany(e => e.Orders)
-                .Map(m => m.ToTable("ProductsOrders"));
+            modelBuilder.Entity<Login>().HasKey(k => k.Login_ID);
+            modelBuilder.Entity<Login>().Map(m => m.ToTable("Logins"));
 
-            modelBuilder.Entity<Orders>()
-                .HasMany(e => e.Admins)
-                .WithMany(e => e.Orders)
-                .Map(m => m.ToTable("ProductsOrders"));
+            modelBuilder.Entity<Password>().HasKey(k => k.Password_ID);
+            modelBuilder.Entity<Password>().Map(m => m.ToTable("Passwords"));
 
-            modelBuilder.Entity<Orders>()
-                .HasMany(e => e.Clients)
-                .WithMany(e => e.Orders)
-                .Map(m => m.ToTable("ProductsOrders"));
+            modelBuilder.Entity<Orders>().HasKey(k => k.Order_ID);
+            modelBuilder.Entity<Orders>().HasMany(p => p.Products);
+            modelBuilder.Entity<Orders>().Map(m => m.ToTable("Orders"));
+
+            modelBuilder.Entity<Products>().HasKey(k => k.Product_ID);
+            modelBuilder.Entity<Products>().HasMany(p => p.Orders);
+            modelBuilder.Entity<Products>().HasMany(p => p.Clients);
+            modelBuilder.Entity<Products>().HasMany(p => p.Admins);
+            modelBuilder.Entity<Products>().Map(m => m.ToTable("Products"));
         }
     }
 }

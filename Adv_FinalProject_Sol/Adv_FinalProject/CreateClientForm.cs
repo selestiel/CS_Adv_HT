@@ -21,40 +21,47 @@ namespace Adv_FinalProject
 
         private void CreateClient_Btn_Click(object sender, EventArgs e)
         {
-            string CFname = ClientFName_tbox.Text;
-            string CLname = ClientLName_tbox.Text;
-            string Cphone = ClientPhone_tbox.Text;
-            string Cemail = ClientEmail_tbox.Text;
-            string CBDate = ClientBDate_tbox.Text;
-            string UcClogin = ClientLogin_tbox.Text;
-            string UcCPass = ClientPassword_tbox.Text;
-            string Clogin = "";
-            string Cpass = "";
-            if(ValidateLogin(UcClogin,out UcClogin) == true)
+            using (MyModel adb = new MyModel())
             {
-                Clogin = UcClogin;
-                if(ValidatePassword(UcCPass,out UcCPass) == true)
+                string CFname = ClientFName_tbox.Text;
+                string CLname = ClientLName_tbox.Text;
+                string Cphone = ClientPhone_tbox.Text;
+                string Cemail = ClientEmail_tbox.Text;
+                string CBDate = ClientBDate_tbox.Text;
+                string UcClogin = ClientLogin_tbox.Text;
+                string UcCPass = ClientPassword_tbox.Text;
+                string Clogin = "";
+                string Cpass = "";
+                if (ValidateLogin(UcClogin, out UcClogin) == true)
                 {
-                    Cpass = UcCPass;
-                    MessageBox.Show("Client Created!");
-                    Close();
+                    Clogin = UcClogin;
+                    if (ValidatePassword(UcCPass, out UcCPass) == true)
+                    {
+                        Cpass = UcCPass;
+                        MessageBox.Show("Client Created!");
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error wrong password input");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error wrong password input");
+                    MessageBox.Show("Error wrong login input");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Error wrong login input");
-            }
 
-            Clients NewClient = new Clients();
-            NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail);
-            Login login = new Login();
-            Password password = new Password();
-            login.SetLogin(Clogin, NewClient);
-            password.SetPassword(Cpass, NewClient);
+                Clients NewClient = new Clients();
+                NewClient.CreateClient(CFname, CLname, CBDate, Cphone, Cemail);
+                Login login = new Login();
+                Password password = new Password();
+                login.SetLogin(Clogin, NewClient);
+                adb.Logins.Add(login);
+                password.SetPassword(Cpass, NewClient);
+                adb.Passwords.Add(password);
+                adb.Clients.Add(NewClient);
+                adb.SaveChanges();
+            }
         }
         private bool ValidatePassword(string password, out string ErrorMessage)
         {

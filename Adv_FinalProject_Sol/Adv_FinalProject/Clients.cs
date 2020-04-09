@@ -9,7 +9,6 @@ namespace Adv_FinalProject
     public partial class Clients
     {
 
-        [Key]
         public int Client_ID { get; set; }
 
         public string Client_First_Name { get; set; }

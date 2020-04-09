@@ -9,11 +9,10 @@ namespace Adv_FinalProject
 {
     public class Login
     {
-        [Key]
         public int Login_ID { get; set; }
         public string Login_Name { get; set; }
-        public int? Admins_ID { get; set; }
-        public int? Clients_ID { get; set; }
+        public int Admins_ID { get; set; }
+        public int Clients_ID { get; set; }
         public void SetLogin(string name,Admins admin)
         {
             Login_ID++;

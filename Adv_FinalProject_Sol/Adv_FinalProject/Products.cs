@@ -8,7 +8,6 @@ namespace Adv_FinalProject
 
     public partial class Products
     {
-        [Key]
         public int Product_ID { get; set; }
 
         public string Product_Name { get; set; }

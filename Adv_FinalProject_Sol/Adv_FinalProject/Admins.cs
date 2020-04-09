@@ -9,7 +9,6 @@ namespace Adv_FinalProject
     public partial class Admins
     {
 
-        [Key]
         public int Admin_ID { get; set; }
 
         public string Admin_First_Name { get; set; }

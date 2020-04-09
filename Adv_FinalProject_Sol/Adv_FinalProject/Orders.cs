@@ -8,8 +8,6 @@ namespace Adv_FinalProject
 
     public partial class Orders
     {
-
-        [Key]
         public int Order_ID { get; set; }
 
         public string Order_Name { get; set; }
@@ -25,13 +23,14 @@ namespace Adv_FinalProject
         public virtual ICollection<Admins> Admins { get; }
 
         public virtual ICollection<Clients> Clients { get; }
-
         public virtual ICollection<Products> Products { get; }
+
         public void CreateOrder(string name, Admins admins,List<Products> products)
         {
             Order_ID++;
             Order_Name = name;
             Admin_ID = admins.Admin_ID;
+            Order_Date = DateTime.UtcNow;
             foreach  (Products item in products)
             {
                 Order_Price += item.Product_Price * item.Product_Amount;
@@ -42,6 +41,7 @@ namespace Adv_FinalProject
             Order_ID++;
             Order_Name = name;
             Client_ID = clients.Client_ID;
+            Order_Date = DateTime.UtcNow;
             foreach (Products item in products)
             {
                 Order_Price += item.Product_Price * item.Product_Amount;

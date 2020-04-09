@@ -20,13 +20,36 @@ namespace Adv_FinalProject
 
         private void AddMoney_Btn_Click(object sender, EventArgs e)
         {
-            
-        }
+            using (MyModel adb = new MyModel())
+            {
+                Clients clients = new Clients();
+                if (clients.Client_First_Name == Properties.Settings.Default.LoggedInName)
+                {
+                    clients.Client_Money += Convert.ToDouble(AddMoney_tbox.Text);
+                    adb.Clients.Add(clients);
+                }
+                else
+                {
+                    MessageBox.Show("Error no Data");
+                }
+                
+                adb.SaveChanges();
 
+            }
+        }
         private void AddOrder_Btn_Click(object sender, EventArgs e)
         {
             CreateOrder order = new CreateOrder();
             order.Show();
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet.Orders);
+
         }
     }
 }

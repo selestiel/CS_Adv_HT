@@ -9,11 +9,11 @@ namespace Adv_FinalProject
 {
     public class Password
     {
-        [Key]
+       
         public int Password_ID { get; set; }
         public string Password_Name { get; set; }
-        public int? Admins_ID { get; set; }
-        public int? Clients_ID { get; set; }
+        public int Admins_ID { get; set; }
+        public int Clients_ID { get; set; }
 
         public void SetPassword(string name, Admins admin)
         {

@@ -90,7 +90,6 @@
     <Compile Include="CreateClientForm.Designer.cs">
       <DependentUpon>CreateClientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="C__MigrationHistory.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +109,26 @@
     <Compile Include="Products.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_FinalProjectDBContext_MyDbContextModelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_FinalProjectDBContext_MyDbContextModelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_FinalProjectDBContext_MyDbContextModelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_FinalProjectDBContext_MyDbContextModelDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet3.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +170,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet.xsc">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_FinalProjectDBContext_MyDbContextModelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet.xss">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet1.xsc">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_FinalProjectDBContext_MyDbContextModelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet1.xss">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet2.xsc">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_FinalProjectDBContext_MyDbContextModelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet2.xss">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet3.xsc">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_FinalProjectDBContext_MyDbContextModelDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_FinalProjectDBContext_MyDbContextModelDataSet3.xss">
+      <DependentUpon>_FinalProjectDBContext_MyDbContextModelDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
