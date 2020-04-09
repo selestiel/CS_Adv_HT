@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,9 @@ namespace Adv_FinalProject
             InitializeComponent();
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
+            this.ForeColor = Properties.Settings.Default.TextColor;
+            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
         }
 
@@ -28,28 +32,48 @@ namespace Adv_FinalProject
         {
             using (MyModel adb = new MyModel())
             {
-                products.GetProduct(Convert.ToString(ProductsList_Lbox.SelectedItem), Convert.ToString(ProductsList_Lbox.SelectedItem), Convert.ToInt32(AddProducAmount_tbox.Text));
-                adb.Products.Remove(products);
-                prod.Add(products);
-                adb.SaveChanges();
+               // products.GetProduct(Products_Dgv.CurrentRow, Convert.ToInt32(AddProducAmount_tbox.Text));
+                //adb.Products.Remove(products);
+                //prod.Add(products);
+                //adb.SaveChanges();
             }
         }
 
         private void CreateOrder_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
+            // TODO: This line of code loads data into the '_FinalProjectDBContext_MyDbContextModelDataSet1.Products' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet1.Products);
 
         }
 
         private void CheckOutOrder_Btn_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFile = new SaveFileDialog();
-            saveFile.ShowDialog();
+            FileStream stream = new FileStream("D:/Test/MyFile", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            writer.WriteLine();
+            writer.WriteLine("And thus the new Age has begun evolving entire world in some thing new, something chaotic!");
+            writer.Close();
+            stream.Close();
+            
         }
 
         private void CreateOrder_Btn_Click(object sender, EventArgs e)
         {
             Orders orders = new Orders();
             orders.CreateOrder(OrderName_tbox.Text, clients.GetClient(Properties.Settings.Default.LoggedInName), prod);
+        }
+
+        private void ViewCheck_Btn_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("MyFile") == true)
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.InitialDirectory = "D:/Test";
+                fileDialog.FileName = "MyFile";
+                fileDialog.OpenFile();
+            }
         }
     }
 }

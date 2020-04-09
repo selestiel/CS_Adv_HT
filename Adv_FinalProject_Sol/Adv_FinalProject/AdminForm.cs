@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -13,6 +14,9 @@ namespace Adv_FinalProject
             this.Width = Properties.Settings.Default.MFWidth;
             this.Height = Properties.Settings.Default.MFHeight;
             this.Location = Properties.Settings.Default.MFLocation;
+            this.ForeColor = Properties.Settings.Default.TextColor;
+            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
         }
 

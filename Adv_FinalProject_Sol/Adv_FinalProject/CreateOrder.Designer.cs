@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ProductsList_Lbox = new System.Windows.Forms.ListBox();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProdList_lbl = new System.Windows.Forms.Label();
             this.AddProduct_Btn = new System.Windows.Forms.Button();
             this.AddProducAmount_tbox = new System.Windows.Forms.TextBox();
@@ -39,26 +37,20 @@
             this.CreateOrder_Btn = new System.Windows.Forms.Button();
             this.CheckOutOrder_Btn = new System.Windows.Forms.Button();
             this.Username_lbl = new System.Windows.Forms.Label();
+            this._FinalProjectDBContext_MyDbContextModelDataSet1 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter();
+            this.ViewCheck_Btn = new System.Windows.Forms.Button();
+            this.Products_Dgv = new System.Windows.Forms.DataGridView();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ProductsList_Lbox
-            // 
-            this.ProductsList_Lbox.AccessibleRole = System.Windows.Forms.AccessibleRole.DropList;
-            this.ProductsList_Lbox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productsBindingSource, "Product_Price", true));
-            this.ProductsList_Lbox.DataSource = this.productsBindingSource;
-            this.ProductsList_Lbox.DisplayMember = "Product_Manufacturer";
-            this.ProductsList_Lbox.FormattingEnabled = true;
-            this.ProductsList_Lbox.ItemHeight = 16;
-            this.ProductsList_Lbox.Location = new System.Drawing.Point(12, 34);
-            this.ProductsList_Lbox.Name = "ProductsList_Lbox";
-            this.ProductsList_Lbox.Size = new System.Drawing.Size(391, 20);
-            this.ProductsList_Lbox.TabIndex = 0;
-            this.ProductsList_Lbox.ValueMember = "Product_Name";
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
             // 
             // ProdList_lbl
             // 
@@ -74,7 +66,7 @@
             // 
             this.AddProduct_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AddProduct_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProduct_Btn.Location = new System.Drawing.Point(543, 34);
+            this.AddProduct_Btn.Location = new System.Drawing.Point(543, 229);
             this.AddProduct_Btn.Name = "AddProduct_Btn";
             this.AddProduct_Btn.Size = new System.Drawing.Size(245, 52);
             this.AddProduct_Btn.TabIndex = 2;
@@ -86,7 +78,7 @@
             // 
             this.AddProducAmount_tbox.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.AddProducAmount_tbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddProducAmount_tbox.Location = new System.Drawing.Point(409, 34);
+            this.AddProducAmount_tbox.Location = new System.Drawing.Point(392, 243);
             this.AddProducAmount_tbox.Name = "AddProducAmount_tbox";
             this.AddProducAmount_tbox.Size = new System.Drawing.Size(127, 38);
             this.AddProducAmount_tbox.TabIndex = 3;
@@ -96,7 +88,7 @@
             // 
             this.OrderName_lbl.AutoSize = true;
             this.OrderName_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderName_lbl.Location = new System.Drawing.Point(9, 126);
+            this.OrderName_lbl.Location = new System.Drawing.Point(7, 307);
             this.OrderName_lbl.Name = "OrderName_lbl";
             this.OrderName_lbl.Size = new System.Drawing.Size(101, 20);
             this.OrderName_lbl.TabIndex = 4;
@@ -105,7 +97,7 @@
             // OrderName_tbox
             // 
             this.OrderName_tbox.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.OrderName_tbox.Location = new System.Drawing.Point(115, 126);
+            this.OrderName_tbox.Location = new System.Drawing.Point(115, 307);
             this.OrderName_tbox.Name = "OrderName_tbox";
             this.OrderName_tbox.Size = new System.Drawing.Size(421, 22);
             this.OrderName_tbox.TabIndex = 5;
@@ -115,7 +107,7 @@
             // 
             this.CreateOrder_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CreateOrder_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateOrder_Btn.Location = new System.Drawing.Point(543, 109);
+            this.CreateOrder_Btn.Location = new System.Drawing.Point(542, 291);
             this.CreateOrder_Btn.Name = "CreateOrder_Btn";
             this.CreateOrder_Btn.Size = new System.Drawing.Size(245, 43);
             this.CreateOrder_Btn.TabIndex = 6;
@@ -128,7 +120,7 @@
             this.CheckOutOrder_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CheckOutOrder_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CheckOutOrder_Btn.Location = new System.Drawing.Point(12, 158);
+            this.CheckOutOrder_Btn.Location = new System.Drawing.Point(11, 340);
             this.CheckOutOrder_Btn.Name = "CheckOutOrder_Btn";
             this.CheckOutOrder_Btn.Size = new System.Drawing.Size(776, 46);
             this.CheckOutOrder_Btn.TabIndex = 7;
@@ -146,11 +138,100 @@
             this.Username_lbl.TabIndex = 8;
             this.Username_lbl.Text = "Username";
             // 
+            // _FinalProjectDBContext_MyDbContextModelDataSet1
+            // 
+            this._FinalProjectDBContext_MyDbContextModelDataSet1.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet1";
+            this._FinalProjectDBContext_MyDbContextModelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet1;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // ViewCheck_Btn
+            // 
+            this.ViewCheck_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ViewCheck_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewCheck_Btn.Location = new System.Drawing.Point(12, 392);
+            this.ViewCheck_Btn.Name = "ViewCheck_Btn";
+            this.ViewCheck_Btn.Size = new System.Drawing.Size(776, 46);
+            this.ViewCheck_Btn.TabIndex = 9;
+            this.ViewCheck_Btn.Text = "View Check";
+            this.ViewCheck_Btn.UseVisualStyleBackColor = true;
+            this.ViewCheck_Btn.Click += new System.EventHandler(this.ViewCheck_Btn_Click);
+            // 
+            // Products_Dgv
+            // 
+            this.Products_Dgv.AllowUserToAddRows = false;
+            this.Products_Dgv.AllowUserToDeleteRows = false;
+            this.Products_Dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Products_Dgv.AutoGenerateColumns = false;
+            this.Products_Dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.Products_Dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Products_Dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.productManufacturerDataGridViewTextBoxColumn,
+            this.productPriceDataGridViewTextBoxColumn,
+            this.productAmountDataGridViewTextBoxColumn});
+            this.Products_Dgv.DataSource = this.productsBindingSource;
+            this.Products_Dgv.Location = new System.Drawing.Point(12, 34);
+            this.Products_Dgv.MultiSelect = false;
+            this.Products_Dgv.Name = "Products_Dgv";
+            this.Products_Dgv.RowHeadersWidth = 51;
+            this.Products_Dgv.RowTemplate.Height = 24;
+            this.Products_Dgv.Size = new System.Drawing.Size(775, 200);
+            this.Products_Dgv.TabIndex = 10;
+            // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // productManufacturerDataGridViewTextBoxColumn
+            // 
+            this.productManufacturerDataGridViewTextBoxColumn.DataPropertyName = "Product_Manufacturer";
+            this.productManufacturerDataGridViewTextBoxColumn.HeaderText = "Product_Manufacturer";
+            this.productManufacturerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productManufacturerDataGridViewTextBoxColumn.Name = "productManufacturerDataGridViewTextBoxColumn";
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            // 
+            // productAmountDataGridViewTextBoxColumn
+            // 
+            this.productAmountDataGridViewTextBoxColumn.DataPropertyName = "Product_Amount";
+            this.productAmountDataGridViewTextBoxColumn.HeaderText = "Product_Amount";
+            this.productAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Products_Dgv);
+            this.Controls.Add(this.ViewCheck_Btn);
             this.Controls.Add(this.Username_lbl);
             this.Controls.Add(this.CheckOutOrder_Btn);
             this.Controls.Add(this.CreateOrder_Btn);
@@ -159,27 +240,35 @@
             this.Controls.Add(this.AddProducAmount_tbox);
             this.Controls.Add(this.AddProduct_Btn);
             this.Controls.Add(this.ProdList_lbl);
-            this.Controls.Add(this.ProductsList_Lbox);
             this.Name = "CreateOrder";
             this.Text = "CreateOrder";
             this.Load += new System.EventHandler(this.CreateOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox ProductsList_Lbox;
         private System.Windows.Forms.Label ProdList_lbl;
         private System.Windows.Forms.Button AddProduct_Btn;
         private System.Windows.Forms.TextBox AddProducAmount_tbox;
         private System.Windows.Forms.Label OrderName_lbl;
         private System.Windows.Forms.TextBox OrderName_tbox;
-        private System.Windows.Forms.BindingSource productsBindingSource;
         private System.Windows.Forms.Button CreateOrder_Btn;
         private System.Windows.Forms.Button CheckOutOrder_Btn;
         private System.Windows.Forms.Label Username_lbl;
+        private _FinalProjectDBContext_MyDbContextModelDataSet1 _FinalProjectDBContext_MyDbContextModelDataSet1;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private _FinalProjectDBContext_MyDbContextModelDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.Button ViewCheck_Btn;
+        private System.Windows.Forms.DataGridView Products_Dgv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
     }
 }

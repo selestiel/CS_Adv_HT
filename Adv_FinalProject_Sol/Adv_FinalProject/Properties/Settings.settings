@@ -17,5 +17,11 @@
     <Setting Name="LoggedInName" Type="System.String" Scope="User">
       <Value Profile="(Default)">"User"</Value>
     </Setting>
+    <Setting Name="TextColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="TextFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 7.8pt</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

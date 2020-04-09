@@ -82,5 +82,29 @@ namespace Adv_FinalProject.Properties {
                 this["LoggedInName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public global::System.Drawing.Color TextColor {
+            get {
+                return ((global::System.Drawing.Color)(this["TextColor"]));
+            }
+            set {
+                this["TextColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 7.8pt")]
+        public global::System.Drawing.Font TextFont {
+            get {
+                return ((global::System.Drawing.Font)(this["TextFont"]));
+            }
+            set {
+                this["TextFont"] = value;
+            }
+        }
     }
 }

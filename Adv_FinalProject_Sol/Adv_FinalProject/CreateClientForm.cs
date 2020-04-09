@@ -18,6 +18,9 @@ namespace Adv_FinalProject
             InitializeComponent();
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
+            this.ForeColor = Properties.Settings.Default.TextColor;
+            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+
         }
 
 

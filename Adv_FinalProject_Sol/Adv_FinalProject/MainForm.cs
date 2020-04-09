@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.Entity;
-
+using Microsoft.Win32;
 
 namespace Adv_FinalProject
 {
@@ -18,6 +18,13 @@ namespace Adv_FinalProject
         public MainForm()
         {
             InitializeComponent();
+            this.BackColor = Properties.Settings.Default.MFColor;
+            this.Width = Properties.Settings.Default.MFWidth;
+            this.Height = Properties.Settings.Default.MFHeight;
+            this.Location = Properties.Settings.Default.MFLocation;
+            this.ForeColor = Properties.Settings.Default.TextColor; 
+            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+
         }
         private void x800x600ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -87,13 +94,13 @@ namespace Adv_FinalProject
             ColorDialog dialog = new ColorDialog();
             dialog.ShowDialog();
             Properties.Settings.Default.MFColor = dialog.Color;
-            MainForm.ActiveForm.BackColor = Properties.Settings.Default.MFColor;
+            this.BackColor = Properties.Settings.Default.MFColor;
 
         }
         private void Upd_Size()
         {
-            MainForm.ActiveForm.Width = Properties.Settings.Default.MFWidth;
-            MainForm.ActiveForm.Height = Properties.Settings.Default.MFHeight;
+            this.Width = Properties.Settings.Default.MFWidth;
+            this.Height = Properties.Settings.Default.MFHeight;
         }
 
         private void Login_BTN_Click(object sender, EventArgs e)
@@ -101,6 +108,55 @@ namespace Adv_FinalProject
             Hide();
             LoginForm login = new LoginForm();
             login.Show();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistryKey currentUserKey = Registry.CurrentUser;
+            RegistryKey Application = currentUserKey.CreateSubKey("MyModelApp");
+            Application.SetValue("BackColor", Properties.Settings.Default.MFColor.Name);
+            Application.SetValue("FormHeight", Properties.Settings.Default.MFHeight);
+            Application.SetValue("FormWidth", Properties.Settings.Default.MFWidth);
+            Application.SetValue("FormPositionA", Properties.Settings.Default.MFLocation.X);
+            Application.SetValue("FormPositionB", Properties.Settings.Default.MFLocation.Y);
+            Application.SetValue("TextColor", Properties.Settings.Default.TextColor.Name);
+            Application.SetValue("TextFont", Properties.Settings.Default.TextFont.Name);
+            Application.SetValue("TextSize", Properties.Settings.Default.TextFont.Size);
+            Application.Close();
+            Properties.Settings.Default.Save();
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistryKey currentUserKey = Registry.CurrentUser;
+            RegistryKey Application = currentUserKey.OpenSubKey("MyModelApp");
+            Properties.Settings.Default.MFColor = Color.FromName(Application.GetValue("BackColor").ToString());
+            Properties.Settings.Default.MFHeight = Convert.ToInt32(Application.GetValue("FormHeight").ToString());
+            Properties.Settings.Default.MFWidth = Convert.ToInt32(Application.GetValue("FormWidth").ToString());
+            Properties.Settings.Default.MFLocation = new Point(Convert.ToInt32(Application.GetValue("FormPositionA")), Convert.ToInt32(Application.GetValue("FormPositionB")));
+            Properties.Settings.Default.TextColor = Color.FromName(Application.GetValue("TextColor").ToString());
+            Properties.Settings.Default.TextFont = new Font(Application.GetValue("TextFont").ToString(), Convert.ToSingle(Application.GetValue("TextSize").ToString()));
+            Application.Close();
+            Properties.Settings.Default.Reload();
+        }
+
+        private void fontColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog colorDialog = new ColorDialog();
+            colorDialog.AllowFullOpen = true;
+            colorDialog.FullOpen = true;
+            colorDialog.AnyColor = true;
+            colorDialog.ShowDialog();
+            this.ForeColor = colorDialog.Color;
+            Properties.Settings.Default.TextColor = this.ForeColor;
+        }
+
+        private void fontSizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FontDialog font = new FontDialog();
+            font.ShowDialog();
+            this.Font = font.Font;
+            Properties.Settings.Default.TextFont = this.Font;
         }
     }
 }

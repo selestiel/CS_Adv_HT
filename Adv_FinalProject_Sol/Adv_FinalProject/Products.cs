@@ -29,12 +29,9 @@ namespace Adv_FinalProject
             Product_Price = price;
             Product_Amount = amount;
         }
-        public void GetProduct(string name, string man, int amount)
+        public void GetProduct(Products products, int amount)
         {
-            if(Product_Name == name & Product_Manufacturer == man)
-            {
-                Product_Amount -= amount;
-            }
+            products.Product_Amount -= amount;
         }
         public Products()
         {
