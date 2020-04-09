@@ -69,19 +69,7 @@ namespace Adv_FinalProject
                 var ar = (from use in udb.Clients where use.Client_First_Name == Username_lbl.Text select use).FirstOrDefault();
                 if (ar != null)
                 {
-                    for (int i =0; i < dataGridView1.Rows.Count;i++)
-                    {
-                        if ( dataGridView1.Rows[i].Cells[4].Value.ToString() == ar.Client_ID.ToString())
-                        {
-                            dataGridView1.Rows[i].Selected = true;
-                            dataGridView1.Rows[i].Visible = true;
-                        }
-                        else
-                        {
-                            dataGridView1.Rows[i].Visible = false;
-                            dataGridView1.Rows[i].Selected = false;
-                        }
-                    }
+                    dataGridView1.DataSource = udb.Orders.Where(x => x.Client_ID == ar.Client_ID).ToList();
                 }
             }
 

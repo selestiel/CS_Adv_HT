@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this._FinalProjectDBContext_MyDbContextModelDataSet2 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2();
             this.AddMoney_Btn = new System.Windows.Forms.Button();
             this.AddMoney_tbox = new System.Windows.Forms.TextBox();
             this.AddOrder_Btn = new System.Windows.Forms.Button();
@@ -41,29 +48,25 @@
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter();
             this._FinalProjectDBContext_MyDbContextModelDataSet3 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3();
-            this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ordersTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2TableAdapters.OrdersTableAdapter();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._FinalProjectDBContext_MyDbContextModelDataSet2 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2();
-            this.ordersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.adminIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productManufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -85,6 +88,52 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(659, 280);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // orderIDDataGridViewTextBoxColumn
+            // 
+            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
+            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
+            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
+            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // orderNameDataGridViewTextBoxColumn
+            // 
+            this.orderNameDataGridViewTextBoxColumn.DataPropertyName = "Order_Name";
+            this.orderNameDataGridViewTextBoxColumn.HeaderText = "Order_Name";
+            this.orderNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderNameDataGridViewTextBoxColumn.Name = "orderNameDataGridViewTextBoxColumn";
+            // 
+            // orderPriceDataGridViewTextBoxColumn
+            // 
+            this.orderPriceDataGridViewTextBoxColumn.DataPropertyName = "Order_Price";
+            this.orderPriceDataGridViewTextBoxColumn.HeaderText = "Order_Price";
+            this.orderPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderPriceDataGridViewTextBoxColumn.Name = "orderPriceDataGridViewTextBoxColumn";
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "Order_Date";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "Order_Date";
+            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            // 
+            // clientIDDataGridViewTextBoxColumn
+            // 
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Client_ID";
+            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
+            // 
+            // ordersBindingSource1
+            // 
+            this.ordersBindingSource1.DataMember = "Orders";
+            this.ordersBindingSource1.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet2;
+            // 
+            // _FinalProjectDBContext_MyDbContextModelDataSet2
+            // 
+            this._FinalProjectDBContext_MyDbContextModelDataSet2.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet2";
+            this._FinalProjectDBContext_MyDbContextModelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // AddMoney_Btn
             // 
@@ -156,13 +205,16 @@
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productIDDataGridViewTextBoxColumn,
             this.productNameDataGridViewTextBoxColumn,
             this.productManufacturerDataGridViewTextBoxColumn,
             this.productPriceDataGridViewTextBoxColumn,
             this.productAmountDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.productsBindingSource2;
             this.dataGridView2.Location = new System.Drawing.Point(12, 298);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -183,34 +235,6 @@
             this._FinalProjectDBContext_MyDbContextModelDataSet3.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet3";
             this._FinalProjectDBContext_MyDbContextModelDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // productAmountDataGridViewTextBoxColumn
-            // 
-            this.productAmountDataGridViewTextBoxColumn.DataPropertyName = "Product_Amount";
-            this.productAmountDataGridViewTextBoxColumn.HeaderText = "Product_Amount";
-            this.productAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
-            // 
-            // productPriceDataGridViewTextBoxColumn
-            // 
-            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "Product_Price";
-            this.productPriceDataGridViewTextBoxColumn.HeaderText = "Product_Price";
-            this.productPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
-            // 
-            // productManufacturerDataGridViewTextBoxColumn
-            // 
-            this.productManufacturerDataGridViewTextBoxColumn.DataPropertyName = "Product_Manufacturer";
-            this.productManufacturerDataGridViewTextBoxColumn.HeaderText = "Product_Manufacturer";
-            this.productManufacturerDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productManufacturerDataGridViewTextBoxColumn.Name = "productManufacturerDataGridViewTextBoxColumn";
-            // 
-            // productNameDataGridViewTextBoxColumn
-            // 
-            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
-            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
-            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
-            // 
             // ordersTableAdapter
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
@@ -218,16 +242,6 @@
             // ordersBindingSource
             // 
             this.ordersBindingSource.DataMember = "Orders";
-            // 
-            // _FinalProjectDBContext_MyDbContextModelDataSet2
-            // 
-            this._FinalProjectDBContext_MyDbContextModelDataSet2.DataSetName = "_FinalProjectDBContext_MyDbContextModelDataSet2";
-            this._FinalProjectDBContext_MyDbContextModelDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersBindingSource1
-            // 
-            this.ordersBindingSource1.DataMember = "Orders";
-            this.ordersBindingSource1.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet2;
             // 
             // adminIDDataGridViewTextBoxColumn
             // 
@@ -237,45 +251,50 @@
             this.adminIDDataGridViewTextBoxColumn.Name = "adminIDDataGridViewTextBoxColumn";
             this.adminIDDataGridViewTextBoxColumn.Width = 101;
             // 
+            // productIDDataGridViewTextBoxColumn
+            // 
+            this.productIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.HeaderText = "Product_ID";
+            this.productIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productIDDataGridViewTextBoxColumn.Name = "productIDDataGridViewTextBoxColumn";
+            this.productIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // productNameDataGridViewTextBoxColumn
+            // 
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "Product_Name";
+            this.productNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
+            // 
+            // productManufacturerDataGridViewTextBoxColumn
+            // 
+            this.productManufacturerDataGridViewTextBoxColumn.DataPropertyName = "Product_Manufacturer";
+            this.productManufacturerDataGridViewTextBoxColumn.HeaderText = "Product_Manufacturer";
+            this.productManufacturerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productManufacturerDataGridViewTextBoxColumn.Name = "productManufacturerDataGridViewTextBoxColumn";
+            // 
+            // productPriceDataGridViewTextBoxColumn
+            // 
+            this.productPriceDataGridViewTextBoxColumn.DataPropertyName = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.HeaderText = "Product_Price";
+            this.productPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productPriceDataGridViewTextBoxColumn.Name = "productPriceDataGridViewTextBoxColumn";
+            // 
+            // productAmountDataGridViewTextBoxColumn
+            // 
+            this.productAmountDataGridViewTextBoxColumn.DataPropertyName = "Product_Amount";
+            this.productAmountDataGridViewTextBoxColumn.HeaderText = "Product_Amount";
+            this.productAmountDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.productAmountDataGridViewTextBoxColumn.Name = "productAmountDataGridViewTextBoxColumn";
+            // 
             // productsBindingSource1
             // 
             this.productsBindingSource1.DataSource = typeof(Adv_FinalProject.Products);
             // 
-            // clientIDDataGridViewTextBoxColumn
+            // productsBindingSource2
             // 
-            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "Client_ID";
-            this.clientIDDataGridViewTextBoxColumn.HeaderText = "Client_ID";
-            this.clientIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "Order_Date";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "Order_Date";
-            this.orderDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            // 
-            // orderPriceDataGridViewTextBoxColumn
-            // 
-            this.orderPriceDataGridViewTextBoxColumn.DataPropertyName = "Order_Price";
-            this.orderPriceDataGridViewTextBoxColumn.HeaderText = "Order_Price";
-            this.orderPriceDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderPriceDataGridViewTextBoxColumn.Name = "orderPriceDataGridViewTextBoxColumn";
-            // 
-            // orderNameDataGridViewTextBoxColumn
-            // 
-            this.orderNameDataGridViewTextBoxColumn.DataPropertyName = "Order_Name";
-            this.orderNameDataGridViewTextBoxColumn.HeaderText = "Order_Name";
-            this.orderNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderNameDataGridViewTextBoxColumn.Name = "orderNameDataGridViewTextBoxColumn";
-            // 
-            // orderIDDataGridViewTextBoxColumn
-            // 
-            this.orderIDDataGridViewTextBoxColumn.DataPropertyName = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order_ID";
-            this.orderIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
-            this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.productsBindingSource2.DataMember = "Products";
+            this.productsBindingSource2.DataSource = this._FinalProjectDBContext_MyDbContextModelDataSet3;
             // 
             // ClientForm
             // 
@@ -294,13 +313,14 @@
             this.Text = "ClientForm";
             this.Load += new System.EventHandler(this.ClientForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,10 +344,6 @@
         private System.Windows.Forms.BindingSource ordersBindingSource1;
         private _FinalProjectDBContext_MyDbContextModelDataSet2 _FinalProjectDBContext_MyDbContextModelDataSet2;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private _FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter productsTableAdapter;
         private _FinalProjectDBContext_MyDbContextModelDataSet3 _FinalProjectDBContext_MyDbContextModelDataSet3;
@@ -335,5 +351,11 @@
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn adminIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource productsBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productManufacturerDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource productsBindingSource2;
     }
 }
