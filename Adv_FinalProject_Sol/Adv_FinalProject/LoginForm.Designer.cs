@@ -36,6 +36,7 @@
             this.Login_Btn = new System.Windows.Forms.Button();
             this.Override_Btn = new System.Windows.Forms.Button();
             this.Admin_Checkbox = new System.Windows.Forms.CheckBox();
+            this.GoBack_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Login_lbl
@@ -98,13 +99,14 @@
             // 
             // Override_Btn
             // 
-            this.Override_Btn.Location = new System.Drawing.Point(64, 415);
+            this.Override_Btn.AutoSize = true;
+            this.Override_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Override_Btn.Location = new System.Drawing.Point(668, 21);
             this.Override_Btn.Name = "Override_Btn";
-            this.Override_Btn.Size = new System.Drawing.Size(195, 23);
+            this.Override_Btn.Size = new System.Drawing.Size(73, 27);
             this.Override_Btn.TabIndex = 4;
             this.Override_Btn.Text = "Override";
             this.Override_Btn.UseVisualStyleBackColor = true;
-            this.Override_Btn.Click += new System.EventHandler(this.Override_Btn_Click);
             // 
             // Admin_Checkbox
             // 
@@ -116,11 +118,25 @@
             this.Admin_Checkbox.Text = "Admin?";
             this.Admin_Checkbox.UseVisualStyleBackColor = true;
             // 
+            // GoBack_Btn
+            // 
+            this.GoBack_Btn.AutoSize = true;
+            this.GoBack_Btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GoBack_Btn.Location = new System.Drawing.Point(13, 395);
+            this.GoBack_Btn.Name = "GoBack_Btn";
+            this.GoBack_Btn.Size = new System.Drawing.Size(66, 27);
+            this.GoBack_Btn.TabIndex = 6;
+            this.GoBack_Btn.Text = "Go Back";
+            this.GoBack_Btn.UseCompatibleTextRendering = true;
+            this.GoBack_Btn.UseVisualStyleBackColor = true;
+            this.GoBack_Btn.Click += new System.EventHandler(this.GoBack_Btn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GoBack_Btn);
             this.Controls.Add(this.Admin_Checkbox);
             this.Controls.Add(this.Override_Btn);
             this.Controls.Add(this.Login_Btn);
@@ -146,5 +162,6 @@
         private System.Windows.Forms.Button Login_Btn;
         private System.Windows.Forms.Button Override_Btn;
         private System.Windows.Forms.CheckBox Admin_Checkbox;
+        private System.Windows.Forms.Button GoBack_Btn;
     }
 }

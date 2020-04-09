@@ -48,6 +48,7 @@
             this._FinalProjectDBContext_MyDbContextModelDataSet3 = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3();
             this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
+            this.GoBack_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
@@ -231,11 +232,22 @@
             this.Timer1.Interval = 60000;
             this.Timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
+            // GoBack_Btn
+            // 
+            this.GoBack_Btn.Location = new System.Drawing.Point(17, 444);
+            this.GoBack_Btn.Name = "GoBack_Btn";
+            this.GoBack_Btn.Size = new System.Drawing.Size(770, 54);
+            this.GoBack_Btn.TabIndex = 10;
+            this.GoBack_Btn.Text = "Go Back";
+            this.GoBack_Btn.UseVisualStyleBackColor = true;
+            this.GoBack_Btn.Click += new System.EventHandler(this.GoBack_Btn_Click);
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.Controls.Add(this.GoBack_Btn);
             this.Controls.Add(this.Products_Dgv);
             this.Controls.Add(this.ViewCheck_Btn);
             this.Controls.Add(this.Username_lbl);
@@ -277,5 +289,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.Timer Timer1;
+        private System.Windows.Forms.Button GoBack_Btn;
     }
 }

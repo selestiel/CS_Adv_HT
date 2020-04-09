@@ -42,16 +42,16 @@
             this.x1600x900ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x1680x1050ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x1920x1080ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Login_BTN = new System.Windows.Forms.Button();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Login_BTN = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,46 +172,6 @@
             this.x1920x1080ToolStripMenuItem.Text = "x1920x1080";
             this.x1920x1080ToolStripMenuItem.Click += new System.EventHandler(this.x1920x1080ToolStripMenuItem_Click);
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpToolStripMenuItem1,
-            this.aboutToolStripMenuItem,
-            this.supportToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // helpToolStripMenuItem1
-            // 
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(145, 26);
-            this.helpToolStripMenuItem1.Text = "Help";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // supportToolStripMenuItem
-            // 
-            this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
-            this.supportToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.supportToolStripMenuItem.Text = "Support";
-            // 
-            // Login_BTN
-            // 
-            this.Login_BTN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Login_BTN.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
-            this.Login_BTN.Location = new System.Drawing.Point(0, 28);
-            this.Login_BTN.Name = "Login_BTN";
-            this.Login_BTN.Size = new System.Drawing.Size(800, 151);
-            this.Login_BTN.TabIndex = 1;
-            this.Login_BTN.Text = "Log-In";
-            this.Login_BTN.UseVisualStyleBackColor = true;
-            this.Login_BTN.Click += new System.EventHandler(this.Login_BTN_Click);
-            // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
@@ -248,6 +208,48 @@
             this.fontSizeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fontSizeToolStripMenuItem.Text = "FontSize";
             this.fontSizeToolStripMenuItem.Click += new System.EventHandler(this.fontSizeToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.helpToolStripMenuItem1,
+            this.aboutToolStripMenuItem,
+            this.supportToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(145, 26);
+            this.helpToolStripMenuItem1.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.aboutToolStripMenuItem.Text = "About";
+            // 
+            // supportToolStripMenuItem
+            // 
+            this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
+            this.supportToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.supportToolStripMenuItem.Text = "Support";
+            // 
+            // Login_BTN
+            // 
+            this.Login_BTN.AutoSize = true;
+            this.Login_BTN.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Login_BTN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Login_BTN.Font = new System.Drawing.Font("Arial", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Login_BTN.Location = new System.Drawing.Point(0, 28);
+            this.Login_BTN.Name = "Login_BTN";
+            this.Login_BTN.Size = new System.Drawing.Size(800, 56);
+            this.Login_BTN.TabIndex = 1;
+            this.Login_BTN.Text = "Log-In";
+            this.Login_BTN.UseVisualStyleBackColor = true;
+            this.Login_BTN.Click += new System.EventHandler(this.Login_BTN_Click);
             // 
             // MainForm
             // 

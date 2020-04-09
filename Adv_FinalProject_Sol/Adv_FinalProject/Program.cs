@@ -16,7 +16,7 @@ namespace Adv_FinalProject
         [STAThread]
         static void Main()
         {
-            Database.SetInitializer(new DropCreateDatabaseAlways<MyModel>());
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyModel>());
 
             using (MyModel adb = new MyModel())
             {
@@ -51,6 +51,31 @@ namespace Adv_FinalProject
                 };
                 orders.CreateOrder("ForJugo", clients, Prod);
                 adb.Orders.Add(orders);
+                adb.SaveChanges();
+                Clients clients1 = new Clients();
+                Login login2 = new Login();
+                login2.SetLogin("user6789", "pass6789", clients1);
+                clients1.CreateClient("Client02", "Jugorasa", "20.02.2012", "+380223256477", "Jugosa@harvd.com", login2, login2.Login_Name, login2.Password_Name);
+                adb.Logins.Add(login2);
+                adb.Clients.Add(clients1);
+                Products products3 = new Products();
+                products3.SetProduct("Enginesa", "Audisa", 25000.00, 300);
+                adb.Products.Add(products3);
+                Products products4 = new Products();
+                products4.SetProduct("Boxsa", "Demosa", 1500.00, 1500);
+                adb.Products.Add(products4);
+                Products products5 = new Products();
+                products5.SetProduct("Flamessa", "NOSsa", 700.00, 250);
+                adb.Products.Add(products5);
+                Orders orders1 = new Orders();
+                List<Products> Prod1 = new List<Products>
+                {
+                    products3,
+                    products4,
+                    products5
+                };
+                orders1.CreateOrder("ForJugo2sa", clients1, Prod1);
+                adb.Orders.Add(orders1);
                 adb.SaveChanges();
             }
             Application.EnableVisualStyles();

@@ -32,7 +32,7 @@ namespace Adv_FinalProject
         public virtual ICollection<Clients> Clients { get; }
         public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email, Login login, string nlogin, string npass)
         {
-            Admin_ID++;
+            ++Admin_ID;
             Admin_First_Name = Fname;
             Admin_Last_Name = Lname;
             Admin_Birth_Date = Convert.ToDateTime(Bdate);

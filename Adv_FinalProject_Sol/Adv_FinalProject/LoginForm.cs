@@ -15,8 +15,27 @@ namespace Adv_FinalProject
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
-
+            this.Font = Properties.Settings.Default.TextFont;
+            Override_Btn.Enabled = false;
+            Override_Btn.Visible = false;
+            Login_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            Login_Btn.Font = Properties.Settings.Default.TextFont;
+            Override_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            Override_Btn.Font = Properties.Settings.Default.TextFont;
+            GoBack_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            GoBack_Btn.Font = Properties.Settings.Default.TextFont;
+            Account_Info_lbl.Font = Properties.Settings.Default.TextFont;
+            Account_Info_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            Login_lbl.Font = Properties.Settings.Default.TextFont;
+            Login_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            Password_lbl.Font = Properties.Settings.Default.TextFont;
+            Password_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            Admin_Checkbox.Font = Properties.Settings.Default.TextFont;
+            Admin_Checkbox.ForeColor = Properties.Settings.Default.TextColor;
+            Login_textbox.Font = Properties.Settings.Default.TextFont;
+            Login_textbox.ForeColor = Properties.Settings.Default.TextColor;
+            Password_textbox.Font = Properties.Settings.Default.TextFont;
+            Password_textbox.ForeColor = Properties.Settings.Default.TextColor;
         }
         private void MfRet()
         {
@@ -55,8 +74,8 @@ namespace Adv_FinalProject
                         if (cr.Client_Login_Pass_Name == Password_textbox.Text)
                         {
                             Close();
-                            AdminForm Aform = new AdminForm();
-                            Aform.Show();
+                            ClientForm Cform = new ClientForm();
+                            Cform.Show();
                             Properties.Settings.Default.LoggedInName = cr.Client_First_Name;
                             Properties.Settings.Default.Save();
                         }
@@ -68,11 +87,20 @@ namespace Adv_FinalProject
                 }
             }
         }
-        private void Override_Btn_Click(object sender, EventArgs e)
+
+        private void GoBack_Btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            MainForm main = new MainForm();
+            main.Show();
+        }
+        //Button to skip login verification
+        /* private void Override_Btn_Click(object sender, EventArgs e)
         {
             Hide();
             AdminForm admin = new AdminForm();
             admin.Show();
         }
+        */
     }
 }

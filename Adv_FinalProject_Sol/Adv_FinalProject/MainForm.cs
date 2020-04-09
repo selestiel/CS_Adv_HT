@@ -23,7 +23,7 @@ namespace Adv_FinalProject
             this.Height = Properties.Settings.Default.MFHeight;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor; 
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+            this.Font = Properties.Settings.Default.TextFont;
         }
         private void x800x600ToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -13,7 +13,37 @@ namespace Adv_FinalProject
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+            this.Font = Properties.Settings.Default.TextFont;
+            AdminBirthDate_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminEmail_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminLName_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminLogin_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminName_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminPassword_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminPhone_Lbl.Font = Properties.Settings.Default.TextFont;
+            AdminBirthDate_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminEmail_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminLName_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminLogin_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminName_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminPassword_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminPhone_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            AdminBDate_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminEmail_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminFName_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminLName_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminLogin_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminPassword_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminPhone_tbox.Font = Properties.Settings.Default.TextFont;
+            AdminBDate_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminEmail_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminFName_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminLogin_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminLName_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminPassword_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AdminPhone_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            CreateAdmin_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateAdmin_Btn.ForeColor = Properties.Settings.Default.TextColor;
 
         }
 

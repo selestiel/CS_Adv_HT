@@ -20,27 +20,50 @@ namespace Adv_FinalProject
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+            this.Font = Properties.Settings.Default.TextFont;
 
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
+            Username_lbl.Font = Properties.Settings.Default.TextFont;
+            Username_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            OrderName_lbl.Font = Properties.Settings.Default.TextFont;
+            OrderName_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ProdList_lbl.Font = Properties.Settings.Default.TextFont;
+            ProdList_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            Products_Dgv.Font = Properties.Settings.Default.TextFont;
+            Products_Dgv.ForeColor = Properties.Settings.Default.TextColor;
+            AddProducAmount_tbox.Font = Properties.Settings.Default.TextFont;
+            AddProducAmount_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            OrderName_tbox.Font = Properties.Settings.Default.TextFont;
+            OrderName_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            AddProduct_Btn.Font = Properties.Settings.Default.TextFont;
+            AddProduct_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            CheckOutOrder_Btn.Font = Properties.Settings.Default.TextFont;
+            CheckOutOrder_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            CreateOrder_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateOrder_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            GoBack_Btn.Font = Properties.Settings.Default.TextFont;
+            GoBack_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            ViewCheck_Btn.Font = Properties.Settings.Default.TextFont;
+            ViewCheck_Btn.ForeColor = Properties.Settings.Default.TextColor;
         }
 
-        List<Products> prod = new List<Products>();
+        List<Products> G_Prod = new List<Products>();
         Orders G_Order = new Orders();
-        readonly Clients clients = new Clients();
 
         private void AddProduct_Btn_Click(object sender, EventArgs e)
         {
-            using (MyModel adb = new MyModel())
+            using (MyModel odb = new MyModel())
             {
-                Products product1 = new Products();
-                product1.GetProduct(Products_Dgv.CurrentCell.RowIndex);
-                product1.Product_Amount -= Convert.ToInt32(AddProducAmount_tbox.Text);
-                Products product2 = new Products();
-                product2 = product1;
-                product2.Product_Amount = Convert.ToInt32(AddProducAmount_tbox.Text);
-                prod.Add(product2);
-                adb.SaveChanges();
+                Products_Dgv.CurrentCell.Selected = true;
+                var ord = (from item in odb.Products where item.Product_ID == Products_Dgv.CurrentCell.RowIndex select item).FirstOrDefault();
+
+                if (ord != null) 
+                {
+                    ord.Product_Amount -= Convert.ToInt32(AddProducAmount_tbox.Text);
+                    ord.Product_AmountToSell = Convert.ToInt32(AddProducAmount_tbox.Text);
+                    G_Prod.Add(ord);
+                    odb.SaveChanges();
+                }
             }
         }
 
@@ -65,31 +88,34 @@ namespace Adv_FinalProject
                 writer.WriteLine("Order Date: " + G_Order.Order_Date);
                 writer.WriteLine("Order Total Price: " + G_Order.Order_Price);
                 writer.WriteLine("Client ID: " + G_Order.Client_ID);
-                foreach (var item in G_Order.Products)
+                foreach (Products item in G_Order.Products)
                 {
-                    writer.Write(" Product Made by: " + item.Product_Manufacturer + "\t"
-                        + "Product Name: " + item.Product_Name + "\t"
-                        + "Product Amount: " + item.Product_Amount + "\t"
-                        + "Product Price: " + item.Product_Price);
+                    writer.WriteLine(" Product Made by: " + item.Product_Manufacturer + " \t"
+                        + " Product Name: " + item.Product_Name + " \t"
+                        + " Product Amount: " + item.Product_AmountToSell + " \t"
+                        + " Product Price: " + item.Product_Price);
                 }
-                writer.WriteLine();
+                var ppl = (from izem in mdb.Clients where izem.Client_First_Name == Username_lbl.Text select izem).FirstOrDefault();
+                ppl.Client_Money -= G_Order.Order_Price;
+                mdb.SaveChanges();
                 writer.Close();
                 stream.Close();
-                prod = null;
-                G_Order = null;
             }
             
         }
 
         private void CreateOrder_Btn_Click(object sender, EventArgs e)
         {
+            G_Order = null;
             using (var mdb = new MyModel())
             {
                 var ct = (from item in mdb.Clients where item.Client_First_Name == Username_lbl.Text select item).FirstOrDefault();
                 Orders orders = new Orders();
-                orders.CreateOrder(OrderName_tbox.Text, ct, prod);
-                G_Order = orders;
+                orders.CreateOrder(OrderName_tbox.Text, ct, G_Prod);
+                G_Order= orders;
+                mdb.SaveChanges();
             }
+            G_Prod = null;
         }
 
         private void ViewCheck_Btn_Click(object sender, EventArgs e)
@@ -126,6 +152,13 @@ namespace Adv_FinalProject
             this.productsTableAdapter.GetData();
             this.productsTableAdapter.Fill(this._FinalProjectDBContext_MyDbContextModelDataSet3.Products);
 
+        }
+
+        private void GoBack_Btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            MainForm main = new MainForm();
+            main.Show();
         }
     }
 }

@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
-using System.Text.RegularExpressions;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Adv_FinalProject
@@ -15,9 +20,33 @@ namespace Adv_FinalProject
             this.Height = Properties.Settings.Default.MFHeight;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
+            this.Font = Properties.Settings.Default.TextFont;
 
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
+            Username_lbl.ForeColor = Properties.Settings.Default.TextColor;
+            Username_lbl.Font = Properties.Settings.Default.TextFont;
+            Admins_DataGridV.Font = Properties.Settings.Default.TextFont;
+            Admins_DataGridV.ForeColor = Properties.Settings.Default.TextColor;
+            Clients_DataGridV.Font = Properties.Settings.Default.TextFont;
+            Clients_DataGridV.ForeColor = Properties.Settings.Default.TextColor;
+            Orders_DataGridV.Font = Properties.Settings.Default.TextFont;
+            Orders_DataGridV.ForeColor = Properties.Settings.Default.TextColor;
+            Products_DataGrid_V.Font = Properties.Settings.Default.TextFont;
+            Products_DataGrid_V.ForeColor = Properties.Settings.Default.TextColor;
+            AddMoney_tbox.Font = Properties.Settings.Default.TextFont;
+            AddMoney_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            UpdTable_Btn.Font = Properties.Settings.Default.TextFont;
+            UpdTable_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            Override2_Btn.Font = Properties.Settings.Default.TextFont;
+            Override2_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            GoBack_Btn.Font = Properties.Settings.Default.TextFont;
+            GoBack_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            CreateClient_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateClient_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            CreateAdmin_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateAdmin_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            AddMoney_Btn.Font = Properties.Settings.Default.TextFont;
+            AddMoney_Btn.ForeColor = Properties.Settings.Default.TextColor;
         }
 
 
@@ -42,20 +71,19 @@ namespace Adv_FinalProject
 
         private void AddMoney_Btn_Click(object sender, EventArgs e)
         {
-            using (MyModel adb = new MyModel())
+            using (MyModel db = new MyModel())
             {
-                Admins admins = new Admins();
-                if (admins.Admin_First_Name == Properties.Settings.Default.LoggedInName)
+                var ar = (from user in db.Admins where user.Admin_First_Name == Username_lbl.Text select user).FirstOrDefault();
+                if (ar != null)
                 {
-                    admins.Admin_Money += Convert.ToDouble(AddMoney_tbox.Text);
-                    adb.Admins.Add(admins);
+                    ar.Admin_Money += Convert.ToDouble(AddMoney_tbox.Text);
                 }
                 else
                 {
                     MessageBox.Show("Error no Data");
                 }
 
-                adb.SaveChanges();
+                db.SaveChanges();
 
             }
         }
@@ -97,5 +125,11 @@ namespace Adv_FinalProject
 
         }
 
+        private void GoBack_Btn_Click(object sender, EventArgs e)
+        {
+            Close();
+            MainForm main = new MainForm();
+            main.Show();
+        }
     }
 }

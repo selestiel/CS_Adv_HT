@@ -32,7 +32,7 @@ namespace Adv_FinalProject
         public virtual ICollection<Products> Products { get; }
         public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email, Login login, string nlogin,string npass)
         {
-            Client_ID++;
+            ++Client_ID;
             Client_First_Name = Fname;
             Client_Last_Name = Lname;
             Client_Birth_Date = Convert.ToDateTime(Bdate);

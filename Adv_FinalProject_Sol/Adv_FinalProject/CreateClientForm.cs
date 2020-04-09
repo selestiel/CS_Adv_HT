@@ -19,11 +19,38 @@ namespace Adv_FinalProject
             this.BackColor = Properties.Settings.Default.MFColor;
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
-            this.Font = new Font(Properties.Settings.Default.TextFont.Name, Convert.ToSingle(Properties.Settings.Default.TextFont.Size));
-
+            this.Font = Properties.Settings.Default.TextFont;
+            ClientBirthDate_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientEmail_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientLName_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientLogin_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientName_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientPassword_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientPhone_Lbl.Font = Properties.Settings.Default.TextFont;
+            ClientBirthDate_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientEmail_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientLName_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientLogin_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientName_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientPassword_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientPhone_Lbl.ForeColor = Properties.Settings.Default.TextColor;
+            ClientBDate_tbox.Font= Properties.Settings.Default.TextFont;
+            ClientEmail_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientFName_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientLName_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientLogin_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientPassword_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientPhone_tbox.Font = Properties.Settings.Default.TextFont;
+            ClientBDate_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientEmail_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientFName_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientLogin_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientLName_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientPassword_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            ClientPhone_tbox.ForeColor = Properties.Settings.Default.TextColor;
+            CreateClient_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateClient_Btn.ForeColor = Properties.Settings.Default.TextColor;
         }
-
-
         private void CreateClient_Btn_Click(object sender, EventArgs e)
         {
             using (MyModel adb = new MyModel())

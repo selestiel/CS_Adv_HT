@@ -17,6 +17,7 @@ namespace Adv_FinalProject
         public double Product_Price { get; set; }
 
         public int Product_Amount { get; set; }
+        public int Product_AmountToSell { get; set; }
 
         public virtual ICollection<Admins> Admins { get; }
         public virtual ICollection<Clients> Clients { get; }
