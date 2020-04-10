@@ -30,7 +30,7 @@ namespace Adv_FinalProject
         public virtual ICollection<Orders> Orders { get; }
         public virtual ICollection<Products> Products { get; }
         public virtual ICollection<Clients> Clients { get; }
-        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email, Login login, string nlogin, string npass)
+        public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email)
         {
             ++Admin_ID;
             Admin_First_Name = Fname;
@@ -39,9 +39,13 @@ namespace Adv_FinalProject
             Admin_Phone_Number = phone;
             Admin_Email = email;
             Admin_Registration_Date = DateTime.UtcNow;
+            
+        }
+        public void SetAdminLogin(Login login)
+        {
             Admin_Login = login;
-            Admin_Login_Name = nlogin;
-            Admin_Login_Pass_Name = npass;
+            Admin_Login_Name = login.Login_Name;
+            Admin_Login_Pass_Name = login.Password_Name;
 
         }
         public string GetAdmin(Login login)

@@ -16,7 +16,7 @@ namespace Adv_FinalProject
         public int Clients_ID { get; set; }
         public void SetLogin(string lname, string pname,Admins admin)
         {
-            Login_ID++;
+            ++Login_ID;
             Login_Name = lname;
             Password_Name = pname;
             Admins_ID = admin.Admin_ID;

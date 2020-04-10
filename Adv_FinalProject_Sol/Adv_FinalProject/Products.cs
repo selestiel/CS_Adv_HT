@@ -24,7 +24,7 @@ namespace Adv_FinalProject
         public virtual ICollection<Orders> Orders { get; }
         public void SetProduct(string name, string man, double price, int amount)
         {
-            Product_ID++;
+            ++Product_ID;
             Product_Name = name;
             Product_Manufacturer = man;
             Product_Price = price;

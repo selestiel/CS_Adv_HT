@@ -120,24 +120,24 @@ namespace Adv_FinalProject
 
         private void ViewCheck_Btn_Click(object sender, EventArgs e)
         {
-            var fileContent = string.Empty;
-            var filePath = @"D:/Test/MyFile.txt";
 
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.InitialDirectory = @"D:/";
+                openFileDialog.InitialDirectory = @"D:/Test/";
                 openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
                 openFileDialog.FilterIndex = 2;
                 openFileDialog.RestoreDirectory = true;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    filePath = openFileDialog.FileName;
-                    var process = new Process();
-                    process.StartInfo = new ProcessStartInfo()
+                    var filePath = openFileDialog.FileName;
+                    var process = new Process
                     {
-                        UseShellExecute = true,
-                        FileName = filePath
+                        StartInfo = new ProcessStartInfo()
+                        {
+                            UseShellExecute = true,
+                            FileName = filePath
+                        }
                     };
 
                     process.Start();

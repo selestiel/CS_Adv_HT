@@ -16,21 +16,23 @@ namespace Adv_FinalProject
         [STAThread]
         static void Main()
         {
-            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<MyModel>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<MyModel>());
 
             using (MyModel adb = new MyModel())
             {
 
                 Admins admins = new Admins();
                 Login login = new Login();
+                admins.CreateAdmin("Admintor", "RootAdmin", "02.03.2020", "+380555556399", "Admin@myapp.com");
                 login.SetLogin("Admin123", "pass1234", admins);
-                admins.CreateAdmin("Admintor", "RootAdmin", "02.03.2020", "+380555556399", "Admin@myapp.com",login,login.Login_Name,login.Password_Name);
+                admins.SetAdminLogin(login);
                 adb.Logins.Add(login);
                 adb.Admins.Add(admins);
                 Clients clients = new Clients();
                 Login login1 = new Login();
+                clients.CreateClient("Client01", "Jugo", "20.02.2012", "+380223256477", "Jugo@harvd.com");
                 login1.SetLogin("user1234", "pass9876", clients);
-                clients.CreateClient("Client01", "Jugo", "20.02.2012", "+380223256477", "Jugo@harvd.com",login1,login1.Login_Name,login1.Password_Name);
+                clients.SetClientLogin(login1);
                 adb.Logins.Add(login1);
                 adb.Clients.Add(clients);
                 Products products = new Products();
@@ -54,8 +56,9 @@ namespace Adv_FinalProject
                 adb.SaveChanges();
                 Clients clients1 = new Clients();
                 Login login2 = new Login();
+                clients1.CreateClient("Client02", "Jugorasa", "20.02.2012", "+380223256477", "Jugosa@harvd.com");
                 login2.SetLogin("user6789", "pass6789", clients1);
-                clients1.CreateClient("Client02", "Jugorasa", "20.02.2012", "+380223256477", "Jugosa@harvd.com", login2, login2.Login_Name, login2.Password_Name);
+                clients1.SetClientLogin(login2);
                 adb.Logins.Add(login2);
                 adb.Clients.Add(clients1);
                 Products products3 = new Products();
