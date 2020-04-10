@@ -49,6 +49,8 @@ namespace Adv_FinalProject
             {
                 if (Admin_Checkbox.Checked == true)
                 {
+                    Properties.Settings.Default.Checkbox = true;
+                    Properties.Settings.Default.Save();
                     var ar = (from adm in lpdb.Admins where adm.Admin_Login_Name == Login_textbox.Text select adm).FirstOrDefault();
                     if (ar != null)
                     {
@@ -68,6 +70,8 @@ namespace Adv_FinalProject
                 }
                 else
                 {
+                    Properties.Settings.Default.Checkbox = false;
+                    Properties.Settings.Default.Save();
                     var cr = (from cli in lpdb.Clients where cli.Client_Login_Name == Login_textbox.Text select cli).FirstOrDefault();
                     if (cr != null)
                     {

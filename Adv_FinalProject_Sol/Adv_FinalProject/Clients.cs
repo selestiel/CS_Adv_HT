@@ -28,8 +28,8 @@ namespace Adv_FinalProject
         public Login Client_Login { get; set; }
         public string Client_Login_Name { get; set; }
         public string Client_Login_Pass_Name { get; set; }
-        public virtual ICollection<Orders> Orders { get; }
-        public virtual ICollection<Products> Products { get; }
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
         public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email)
         {
             ++Client_ID;
@@ -59,7 +59,7 @@ namespace Adv_FinalProject
         }
         public Clients GetClient(string name)
         {
-            if (Client_First_Name == name)
+            if (this.Client_First_Name == name)
             {
                 return this;
             }

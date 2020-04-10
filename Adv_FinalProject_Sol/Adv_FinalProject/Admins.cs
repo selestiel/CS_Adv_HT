@@ -27,9 +27,9 @@ namespace Adv_FinalProject
         public Login Admin_Login { get; set; }
         public string Admin_Login_Name { get; set; }
         public string Admin_Login_Pass_Name { get; set; }
-        public virtual ICollection<Orders> Orders { get; }
-        public virtual ICollection<Products> Products { get; }
-        public virtual ICollection<Clients> Clients { get; }
+        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Products> Products { get; set; }
+        public virtual ICollection<Clients> Clients { get; set; }
         public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email)
         {
             ++Admin_ID;

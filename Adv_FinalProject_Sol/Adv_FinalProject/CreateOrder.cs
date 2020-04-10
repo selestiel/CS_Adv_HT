@@ -21,7 +21,8 @@ namespace Adv_FinalProject
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
             this.Font = Properties.Settings.Default.TextFont;
-
+            Admin_Checkbox.Checked = Properties.Settings.Default.Checkbox;
+            Properties.Settings.Default.Upgrade();
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
             Username_lbl.Font = Properties.Settings.Default.TextFont;
             Username_lbl.ForeColor = Properties.Settings.Default.TextColor;
@@ -45,6 +46,8 @@ namespace Adv_FinalProject
             GoBack_Btn.ForeColor = Properties.Settings.Default.TextColor;
             ViewCheck_Btn.Font = Properties.Settings.Default.TextFont;
             ViewCheck_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            NextOrder_Btn.Font = Properties.Settings.Default.TextFont;
+            NextOrder_Btn.ForeColor = Properties.Settings.Default.TextColor;
         }
 
         List<Products> G_Prod = new List<Products>();
@@ -59,8 +62,8 @@ namespace Adv_FinalProject
 
                 if (ord != null) 
                 {
-                    ord.Product_Amount -= Convert.ToInt32(AddProducAmount_tbox.Text);
                     ord.Product_AmountToSell = Convert.ToInt32(AddProducAmount_tbox.Text);
+                    ord.Product_Amount -= Convert.ToInt32(AddProducAmount_tbox.Text);
                     G_Prod.Add(ord);
                     odb.SaveChanges();
                 }
@@ -78,44 +81,91 @@ namespace Adv_FinalProject
         {
             using (var mdb = new MyModel())
             {
-                var ct = (from item in mdb.Clients where item.Client_First_Name == Username_lbl.Text select item).FirstOrDefault();
-                G_Order.Client_ID = ct.Client_ID;
-                Directory.CreateDirectory("D:/Test");
-                FileStream stream = new FileStream("D:/Test/MyFile.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write);
-                StreamWriter writer = new StreamWriter(stream);
-                writer.WriteLine("Order ID: " + G_Order.Order_ID);
-                writer.WriteLine("Order Name: " + G_Order.Order_Name);
-                writer.WriteLine("Order Date: " + G_Order.Order_Date);
-                writer.WriteLine("Order Total Price: " + G_Order.Order_Price);
-                writer.WriteLine("Client ID: " + G_Order.Client_ID);
-                foreach (Products item in G_Order.Products)
+                if (Admin_Checkbox.Checked == false)
                 {
-                    writer.WriteLine(" Product Made by: " + item.Product_Manufacturer + " \t"
-                        + " Product Name: " + item.Product_Name + " \t"
-                        + " Product Amount: " + item.Product_AmountToSell + " \t"
-                        + " Product Price: " + item.Product_Price);
+                    var ct = (from item in mdb.Clients where item.Client_First_Name == Username_lbl.Text select item).FirstOrDefault();
+                    G_Order.Client_ID = ct.Client_ID;
+                    Directory.CreateDirectory("D:/Test");
+                    FileStream stream = new FileStream("D:/Test/MyFile.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write);
+                    StreamWriter writer = new StreamWriter(stream);
+                    writer.WriteLine("Order ID: " + G_Order.Order_ID);
+                    writer.WriteLine("Order Name: " + G_Order.Order_Name);
+                    writer.WriteLine("Order Date: " + G_Order.Order_Date);
+                    writer.WriteLine("Order Total Price: " + G_Order.Order_Price);
+                    writer.WriteLine("Client ID: " + G_Order.Client_ID);
+                    foreach (Products item in G_Order.Products)
+                    {
+                        writer.WriteLine(@" Product Made by: " + item.Product_Manufacturer + " \t"
+                            + " Product Name: " + item.Product_Name + " \t"
+                            + " Product Amount: " + item.Product_AmountToSell + " \t"
+                            + " Product Price: " + item.Product_Price);
+                    }
+                    var ppl = (from izem in mdb.Clients where izem.Client_First_Name == Username_lbl.Text select izem).FirstOrDefault();
+                    ppl.Client_Money -= G_Order.Order_Price;
+                    G_Order.Order_Price = 0;
+                    mdb.SaveChanges();
+                    writer.Close();
+                    stream.Close();
                 }
-                var ppl = (from izem in mdb.Clients where izem.Client_First_Name == Username_lbl.Text select izem).FirstOrDefault();
-                ppl.Client_Money -= G_Order.Order_Price;
-                mdb.SaveChanges();
-                writer.Close();
-                stream.Close();
+                else
+                {
+                    var at = (from item in mdb.Admins where item.Admin_First_Name == Username_lbl.Text select item).FirstOrDefault();
+                    G_Order.Admin_ID = at.Admin_ID;
+                    Directory.CreateDirectory("D:/Test");
+                    FileStream stream = new FileStream("D:/Test/MyFile.txt", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Write);
+                    StreamWriter writer = new StreamWriter(stream);
+                    writer.WriteLine("Order ID: " + G_Order.Order_ID);
+                    writer.WriteLine("Order Name: " + G_Order.Order_Name);
+                    writer.WriteLine("Order Date: " + G_Order.Order_Date);
+                    writer.WriteLine("Order Total Price: " + G_Order.Order_Price);
+                    writer.WriteLine("Client ID: " + G_Order.Admin_ID);
+                    foreach (Products item in G_Order.Products)
+                    {
+                        writer.Write(" Product Made by: " + item.Product_Manufacturer + " \t"
+                            + " Product Name: " + item.Product_Name + " \t"
+                            + " Product Amount: " + item.Product_AmountToSell + " \t"
+                            + " Product Price: " + item.Product_Price);
+                    }
+                    writer.WriteLine();
+                    var ppl = (from izem in mdb.Admins where izem.Admin_First_Name == Username_lbl.Text select izem).FirstOrDefault();
+                    ppl.Admin_Money -= G_Order.Order_Price;
+                    G_Order.Order_Price = 0;
+                    mdb.SaveChanges();
+                    writer.Close();
+                    stream.Close();
+                }
             }
             
         }
 
         private void CreateOrder_Btn_Click(object sender, EventArgs e)
         {
-            G_Order = null;
+
             using (var mdb = new MyModel())
             {
-                var ct = (from item in mdb.Clients where item.Client_First_Name == Username_lbl.Text select item).FirstOrDefault();
-                Orders orders = new Orders();
-                orders.CreateOrder(OrderName_tbox.Text, ct, G_Prod);
-                G_Order= orders;
-                mdb.SaveChanges();
+                
+                if (Admin_Checkbox.Checked == true)
+                {
+                    var at = (from item in mdb.Admins where item.Admin_First_Name == Username_lbl.Text select item).FirstOrDefault();
+                    Orders orders1 = new Orders();
+                    orders1.CreateOrder(OrderName_tbox.Text, at, G_Prod);
+                    G_Order = orders1;
+                    mdb.Orders.Add(G_Order);
+                    mdb.SaveChanges();
+                }
+                else
+                {
+                    var ct = (from item in mdb.Clients where item.Client_First_Name == Username_lbl.Text select item).FirstOrDefault();
+                    Orders orders2 = new Orders();
+                    orders2.CreateOrder(OrderName_tbox.Text, ct, G_Prod);
+                    G_Order = orders2;
+                    mdb.Orders.Add(G_Order);
+                    mdb.SaveChanges();
+                }
+
+                MessageBox.Show(G_Order.Products.Count.ToString());
+
             }
-            G_Prod = null;
         }
 
         private void ViewCheck_Btn_Click(object sender, EventArgs e)
@@ -159,6 +209,12 @@ namespace Adv_FinalProject
             Close();
             MainForm main = new MainForm();
             main.Show();
+        }
+
+        private void NextOrder_Btn_Click(object sender, EventArgs e)
+        {
+            G_Order = null;
+            G_Prod = null;
         }
     }
 }

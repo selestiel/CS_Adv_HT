@@ -49,6 +49,8 @@
             this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter();
             this.Timer1 = new System.Windows.Forms.Timer(this.components);
             this.GoBack_Btn = new System.Windows.Forms.Button();
+            this.Admin_Checkbox = new System.Windows.Forms.CheckBox();
+            this.NextOrder_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Products_Dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet3)).BeginInit();
@@ -242,11 +244,33 @@
             this.GoBack_Btn.UseVisualStyleBackColor = true;
             this.GoBack_Btn.Click += new System.EventHandler(this.GoBack_Btn_Click);
             // 
+            // Admin_Checkbox
+            // 
+            this.Admin_Checkbox.AutoSize = true;
+            this.Admin_Checkbox.Location = new System.Drawing.Point(601, 9);
+            this.Admin_Checkbox.Name = "Admin_Checkbox";
+            this.Admin_Checkbox.Size = new System.Drawing.Size(77, 21);
+            this.Admin_Checkbox.TabIndex = 11;
+            this.Admin_Checkbox.Text = "Admin?";
+            this.Admin_Checkbox.UseVisualStyleBackColor = true;
+            // 
+            // NextOrder_Btn
+            // 
+            this.NextOrder_Btn.Location = new System.Drawing.Point(17, 504);
+            this.NextOrder_Btn.Name = "NextOrder_Btn";
+            this.NextOrder_Btn.Size = new System.Drawing.Size(770, 40);
+            this.NextOrder_Btn.TabIndex = 12;
+            this.NextOrder_Btn.Text = "Next Order";
+            this.NextOrder_Btn.UseVisualStyleBackColor = true;
+            this.NextOrder_Btn.Click += new System.EventHandler(this.NextOrder_Btn_Click);
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 499);
+            this.ClientSize = new System.Drawing.Size(800, 547);
+            this.Controls.Add(this.NextOrder_Btn);
+            this.Controls.Add(this.Admin_Checkbox);
             this.Controls.Add(this.GoBack_Btn);
             this.Controls.Add(this.Products_Dgv);
             this.Controls.Add(this.ViewCheck_Btn);
@@ -290,5 +314,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.Timer Timer1;
         private System.Windows.Forms.Button GoBack_Btn;
+        private System.Windows.Forms.CheckBox Admin_Checkbox;
+        private System.Windows.Forms.Button NextOrder_Btn;
     }
 }

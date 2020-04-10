@@ -19,6 +19,8 @@ namespace Adv_FinalProject
             this.Location = Properties.Settings.Default.MFLocation;
             this.ForeColor = Properties.Settings.Default.TextColor;
             this.Font = Properties.Settings.Default.TextFont;
+            Properties.Settings.Default.Upgrade();
+
             Username_lbl.Text = Properties.Settings.Default.LoggedInName;
             Username_lbl.Font = Properties.Settings.Default.TextFont;
             Username_lbl.ForeColor = Properties.Settings.Default.TextColor;
