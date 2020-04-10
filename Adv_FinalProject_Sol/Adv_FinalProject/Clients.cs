@@ -29,7 +29,6 @@ namespace Adv_FinalProject
         public string Client_Login_Name { get; set; }
         public string Client_Login_Pass_Name { get; set; }
         public virtual ICollection<Orders> Orders { get; set; }
-        public virtual ICollection<Products> Products { get; set; }
         public void CreateClient(string Fname, string Lname, string Bdate, string phone, string email)
         {
             ++Client_ID;
@@ -72,7 +71,6 @@ namespace Adv_FinalProject
         public Clients()
         {
             Orders = new List<Orders>();
-            Products = new List<Products>();
         }
     }
 }

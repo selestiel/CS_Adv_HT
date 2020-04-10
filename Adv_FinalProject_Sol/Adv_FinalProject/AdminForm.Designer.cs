@@ -89,6 +89,7 @@
             this.ordersTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet2TableAdapters.OrdersTableAdapter();
             this.productsTableAdapter = new Adv_FinalProject._FinalProjectDBContext_MyDbContextModelDataSet3TableAdapters.ProductsTableAdapter();
             this.GoBack_Btn = new System.Windows.Forms.Button();
+            this.CreateProduct_Btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Admins_DataGridV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._FinalProjectDBContext_MyDbContextModelDataSet)).BeginInit();
@@ -133,7 +134,7 @@
             this.Override2_Btn.Name = "Override2_Btn";
             this.Override2_Btn.Size = new System.Drawing.Size(109, 51);
             this.Override2_Btn.TabIndex = 3;
-            this.Override2_Btn.Text = "Override2";
+            this.Override2_Btn.Text = "Go To Client Menu";
             this.Override2_Btn.UseVisualStyleBackColor = true;
             this.Override2_Btn.Click += new System.EventHandler(this.Override2_Btn_Click);
             // 
@@ -594,11 +595,22 @@
             this.GoBack_Btn.UseVisualStyleBackColor = true;
             this.GoBack_Btn.Click += new System.EventHandler(this.GoBack_Btn_Click);
             // 
+            // CreateProduct_Btn
+            // 
+            this.CreateProduct_Btn.Location = new System.Drawing.Point(1100, 364);
+            this.CreateProduct_Btn.Name = "CreateProduct_Btn";
+            this.CreateProduct_Btn.Size = new System.Drawing.Size(109, 46);
+            this.CreateProduct_Btn.TabIndex = 16;
+            this.CreateProduct_Btn.Text = "Create Product";
+            this.CreateProduct_Btn.UseVisualStyleBackColor = true;
+            this.CreateProduct_Btn.Click += new System.EventHandler(this.CreateProduct_Btn_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1233, 769);
+            this.Controls.Add(this.CreateProduct_Btn);
             this.Controls.Add(this.GoBack_Btn);
             this.Controls.Add(this.Products_DataGrid_V);
             this.Controls.Add(this.Orders_DataGridV);
@@ -696,5 +708,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn productPriceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn productAmountDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button GoBack_Btn;
+        private System.Windows.Forms.Button CreateProduct_Btn;
     }
 }

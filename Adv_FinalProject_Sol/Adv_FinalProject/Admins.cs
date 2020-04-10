@@ -28,7 +28,6 @@ namespace Adv_FinalProject
         public string Admin_Login_Name { get; set; }
         public string Admin_Login_Pass_Name { get; set; }
         public virtual ICollection<Orders> Orders { get; set; }
-        public virtual ICollection<Products> Products { get; set; }
         public virtual ICollection<Clients> Clients { get; set; }
         public void CreateAdmin(string Fname, string Lname, string Bdate, string phone, string email)
         {
@@ -73,7 +72,6 @@ namespace Adv_FinalProject
         public Admins()
         {
             Orders = new List<Orders>();
-            Products = new List<Products>();
             Clients = new List<Clients>();
         }
     }

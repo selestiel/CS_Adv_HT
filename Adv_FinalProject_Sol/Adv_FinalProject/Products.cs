@@ -19,9 +19,9 @@ namespace Adv_FinalProject
         public int Product_Amount { get; set; }
         public int Product_AmountToSell { get; set; }
 
-        public virtual ICollection<Admins> Admins { get; set; }
-        public virtual ICollection<Clients> Clients { get; set; }
-        public virtual ICollection<Orders> Orders { get; set; }
+        public Admins  Admins{ get; set; }
+        public  Clients Clients { get; set; }
+        public  Orders Orders { get; set; }
         public void SetProduct(string name, string man, double price, int amount)
         {
             ++Product_ID;
@@ -43,9 +43,6 @@ namespace Adv_FinalProject
         }
         public Products()
         {
-            Admins = new List<Admins>();
-            Clients = new List<Clients>();
-            Orders = new List<Orders>();
         }
 
     }

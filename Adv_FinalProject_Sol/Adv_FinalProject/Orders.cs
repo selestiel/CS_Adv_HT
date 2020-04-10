@@ -54,7 +54,7 @@ namespace Adv_FinalProject
         {
             Admins = new List<Admins>();
             Clients = new List<Clients>();
-            Products = new List<Products>();
+            Products = this.Products;
         }
     }
 }

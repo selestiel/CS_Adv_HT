@@ -163,8 +163,6 @@ namespace Adv_FinalProject
                     mdb.SaveChanges();
                 }
 
-                MessageBox.Show(G_Order.Products.Count.ToString());
-
             }
         }
 
@@ -213,8 +211,8 @@ namespace Adv_FinalProject
 
         private void NextOrder_Btn_Click(object sender, EventArgs e)
         {
-            G_Order = null;
-            G_Prod = null;
+            G_Order = new Orders();
+            G_Prod = new List<Products>();
         }
     }
 }

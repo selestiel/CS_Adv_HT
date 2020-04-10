@@ -49,6 +49,8 @@ namespace Adv_FinalProject
             CreateAdmin_Btn.ForeColor = Properties.Settings.Default.TextColor;
             AddMoney_Btn.Font = Properties.Settings.Default.TextFont;
             AddMoney_Btn.ForeColor = Properties.Settings.Default.TextColor;
+            CreateProduct_Btn.Font = Properties.Settings.Default.TextFont;
+            CreateProduct_Btn.ForeColor = Properties.Settings.Default.TextColor;
         }
 
 
@@ -66,7 +68,7 @@ namespace Adv_FinalProject
 
         private void Override2_Btn_Click(object sender, EventArgs e)
         {
-            Hide();
+            Close();
             ClientForm clientForm = new ClientForm();
             clientForm.Show();
         }
@@ -132,6 +134,12 @@ namespace Adv_FinalProject
             Close();
             MainForm main = new MainForm();
             main.Show();
+        }
+
+        private void CreateProduct_Btn_Click(object sender, EventArgs e)
+        {
+            CreateProductForm form = new CreateProductForm();
+            form.Show();
         }
     }
 }
