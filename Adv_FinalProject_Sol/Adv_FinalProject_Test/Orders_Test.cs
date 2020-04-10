@@ -37,12 +37,6 @@ namespace Adv_FinalProject_Test
             Assert.IsNotNull(Prod2);
             Assert.IsNotNull(Prod3);
             Assert.IsNotNull(Prod4);
-          //  Assert.AreNotEqual(Prod1.Product_ID, Prod2.Product_ID);
-          //  Assert.AreNotEqual(Prod2.Product_ID, Prod3.Product_ID);
-          //  Assert.AreNotEqual(Prod3.Product_ID, Prod4.Product_ID);
-          //  Assert.AreNotEqual(Prod1.Product_ID, Prod3.Product_ID);
-          //  Assert.AreNotEqual(Prod2.Product_ID, Prod4.Product_ID);
-          //  Assert.AreNotEqual(Prod3.Product_ID, Prod4.Product_ID);
             Assert.IsNotNull(LProd);
             Assert.IsNotNull(Order1);
             Assert.AreEqual(Order1.Client_ID, clients.Client_ID);

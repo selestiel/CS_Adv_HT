@@ -19,7 +19,6 @@ namespace Adv_FinalProject_Test
             Assert.IsNotNull(admins);
             Assert.IsNotNull(login);
             Assert.IsNotNull(login2);
-//            Assert.AreEqual(login2.Admins_ID,login.Admins_ID);
 
 
         }
